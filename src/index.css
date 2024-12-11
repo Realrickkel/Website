@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Lexend', sans-serif;
   }
   
   body {
@@ -26,11 +26,44 @@
     max-width: 1120px;
   }
 
+.blueClass {
+  background-image: linear-gradient(to right, #3090ff, #5749f6);
+  background-clip: text;
+  color: transparent;
+  @apply absolute bottom-12 left-8 z-20 rotate-12 drop-shadow-lg p-4
+}
+
+.redClass {
+  background-image: linear-gradient(to right, #ff54a4, #e41274);
+  background-clip: text;
+  color: transparent;
+  @apply absolute top-12 right-12 z-20 rotate-12 drop-shadow-lg p-4
+}
+
+.yellowClass {
+  background-image: linear-gradient(to right, #FFB000, #FFEF00);
+  background-clip: text;
+  color: transparent;
+  @apply absolute bottom-12 right-12 z-20 -rotate-12 drop-shadow-lg p-4
+}
+
 .personblock {
-  @apply 2xl:w-[180px] 2xl:h-[120px] md:w-[150px] md:h-[100px] bg-white
+  @apply 2xl:w-[180px] 2xl:h-[120px] md:w-[150px] md:h-[100px] bg-white cursor-pointer
 }
 
 .person-selector::-webkit-scrollbar{
   display: none;
   
+}
+
+.bg_image_blue {
+  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit bg-blue-600
+}
+
+.bg_image_red {
+  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit bg-red-600
+}
+
+.bg_image_yellow {
+  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit bg-yellow-300
 }
