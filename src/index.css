@@ -57,13 +57,71 @@
 }
 
 .bg_image_blue {
-  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit bg-blue-600
+  background-image: url('../assets/images/interior1v2WEBP.webp');
+  background-size: cover;
+  background-blend-mode: darken;
+  backdrop-filter: blur(80px);
+  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit 
 }
 
 .bg_image_red {
-  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit bg-red-600
+  background-image: url('../assets/images/interior2v2WEBP.webp');
+  background-size: cover;
+  background-blend-mode: darken;
+  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit 
 }
 
 .bg_image_yellow {
-  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit bg-yellow-300
+  background-image: url('../assets/images/interior3v2WEBP.webp');
+  background-size: cover;
+  background-blend-mode: darken;
+  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit 
 }
+
+.blue_first_message {
+@apply flex items-center justify-center top-48 left-28 absolute w-[150px] h-[50px] bg-white rounded-2xl shadow-lg shadow-zinc-800 p-2
+}
+
+.blue_second_message {
+@apply flex flex-wrap items-center justify-center bottom-56 left-72 absolute w-[230px] h-[70px] bg-white rounded-2xl shadow-lg shadow-zinc-800 p-2 z-40
+}
+
+.blue_third_message {
+@apply flex items-center justify-center bottom-48 right-32 absolute w-[150px] h-[50px] bg-white rounded-2xl shadow-lg shadow-zinc-800 p-2
+}
+
+.red_first_message {
+  @apply flex items-center justify-center top-64 right-36 absolute w-[150px] h-[50px] bg-red-400 rounded-2xl shadow-lg shadow-zinc-800 p-2
+}
+
+.red_second_message {
+  @apply flex flex-wrap items-center justify-center bottom-40 right-6 absolute w-[230px] h-[70px] bg-red-400 rounded-2xl shadow-lg shadow-zinc-800 p-2 z-40
+}
+
+.red_third_message {
+  @apply flex items-center justify-center bottom-52 left-36 absolute w-[150px] h-[50px] bg-red-400 rounded-2xl shadow-lg shadow-zinc-800 p-2
+}
+
+.yellow_first_message {
+  @apply flex items-center justify-center bottom-48 left-36 absolute w-[150px] h-[50px] bg-yellow-400 rounded-2xl shadow-lg shadow-zinc-800 p-2
+}
+
+.yellow_second_message {
+  @apply flex flex-wrap items-center justify-center top-24 right-20 absolute w-[230px] h-[70px] bg-yellow-400 rounded-2xl shadow-lg shadow-zinc-800 p-2 z-40
+}
+
+.yellow_third_message {
+  @apply flex items-center justify-center top-48 left-24 absolute w-[150px] h-[50px] bg-yellow-400 rounded-2xl shadow-lg shadow-zinc-800 p-2
+}
+
+.blue_small_image {
+ @apply absolute md:scale-75 lg:scale-90 xl:scale-95 2xl:scale-100 md:flex hidden 2xl:top-16 2xl:right-12 md:top-8 md:right-6 w-[230px] h-[300px] rounded-2xl items-end shadow-lg shadow-zinc-800 z-30
+}
+
+.red_small_image {
+  @apply absolute md:scale-75 lg:scale-90 xl:scale-95 2xl:scale-100 md:flex hidden 2xl:top-16 2xl:left-6 md:top-8 md:right-6 w-[230px] h-[300px] rounded-2xl items-end shadow-lg shadow-zinc-800 z-30
+ }
+
+ .yellow_small_image {
+  @apply absolute md:scale-75 lg:scale-90 xl:scale-95 2xl:scale-100 md:flex hidden 2xl:bottom-24 2xl:right-8 md:bottom-8 md:right-6 w-[230px] h-[300px] rounded-2xl items-end shadow-lg shadow-zinc-800 z-30
+ }
