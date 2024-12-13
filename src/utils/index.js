@@ -1,5 +1,5 @@
 import instabgbotimg from "/assets/images/Instagram_background_bot.webp";
-import instabgtopimg from "/assets/images/Instagram_background_top.webp";
+import instabgtopimg from "/assets/images/Instagram_background_topwebp.webp";
 
 import BG1img from "/assets/images/interior1v2WEBP.webp";
 import BG2img from "/assets/images/interior2v2WEBP.webp";

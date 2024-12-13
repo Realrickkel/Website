@@ -7,6 +7,7 @@ const App = () => {
     <main>
       <Hero/>
       <Team/>
+      <Hero/>
     </main>
   )
 }
