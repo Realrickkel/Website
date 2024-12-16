@@ -30,30 +30,56 @@
   /*background-image: linear-gradient(to right, #3090ff, #5749f6);
   background-clip: text;*/
   color: white;
-  @apply absolute top-8 left-48 z-20 drop-shadow-lg p-4
+  @apply absolute top-4 left-48 z-20 drop-shadow-lg p-4
 }
 
 .redClass {
   /*background-image: linear-gradient(to right, #ff54a4, #e41274);
   background-clip: text;*/
   color: white;
-  @apply absolute top-8 right-[40rem] z-20 drop-shadow-lg p-4
+  @apply absolute top-4 right-[12rem] z-20 drop-shadow-lg p-4
 }
 
 .yellowClass {
   /*background-image: linear-gradient(to right, #FFB000, #FFEF00);
   background-clip: text;*/
   color: white;
-  @apply absolute top-8 left-48 z-20 drop-shadow-lg p-4
+  @apply absolute top-4 left-48 z-20 drop-shadow-lg p-4
 }
 
 .personblock {
-  @apply flex justify-center relative overflow-hidden items-start 2xl:w-[180px] 2xl:h-[90px] md:w-[150px] md:h-[80px] rounded-full bg-black cursor-pointer
+  color: #6b6b6b;
+  transition-duration: 0.2s;
+  @apply flex justify-start px-4 relative overflow-hidden items-start 2xl:w-[180px] 2xl:h-[65px] md:w-[150px] md:h-[80px] rounded-2xl bg-zinc-800 cursor-pointer border-solid border-2 border-zinc-600
+}
+
+.personblock.active {
+  color: #fff;
+  background-image: radial-gradient(#3706a8, #7c0aff);
+  filter: drop-shadow(0px 0px 10px #680aff);
+  -webkit-filter: drop-shadow(0px 0px 10px #680aff);
+  border: solid 2px rgba(255, 255, 255, 0.33);
+}
+
+.personblock.active2 {
+  color: #fff;
+  background-image: radial-gradient(#3706a8, #7c0aff);
+  filter: drop-shadow(0px 0px 10px #680aff);
+  -webkit-filter: drop-shadow(0px 0px 10px #680aff);
+  border: solid 2px rgba(255, 255, 255, 0.33);
 }
 
 .person-selector::-webkit-scrollbar{
   display: none;
   
+}
+
+#selector_people {
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
 }
 
 .bg_image_blue {

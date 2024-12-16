@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { BILLLIEIMG, DADIMG, DADSMALLIMG, GEUNSOOIMG, GEUNSOOSMALLIMG, HYEONIIMG, HYEONISMALLIMG, INSTABGBOTIMG, INSTABGTOPIMG, IRENEIMG, PIXXIE2IMG, PIXXIE3IMG, PIXXIEIMG, SAEROYISIMG, SAEROYISMALLIMG, SEUNGGWONIMG, SEUNGGWONSMALLIMG, SIYEONIMG, SJUKSEEIMG, SOOAHIMG, SOOAHSMALLIMG, TONIIMG, TONISMALLIMG, YISEOIMG, YISEOSMALLIMG, YUKIIMG } from "../utils"
+import { DADIMG, DADSMALLIMG, GEUNSOOIMG, GEUNSOOSMALLIMG, HYEONIIMG, HYEONISMALLIMG, INSTABGBOTIMG, INSTABGTOPIMG, SAEROYISIMG, SAEROYISMALLIMG, SEUNGGWONIMG, SEUNGGWONSMALLIMG, SOOAHIMG, SOOAHSMALLIMG, TONIIMG, TONISMALLIMG, YISEOIMG, YISEOSMALLIMG } from "../utils"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
@@ -28,14 +28,6 @@ const Team = () => {
     const [animateIn2, setAnimateIn2] = useState(false)
     const [hoverButton, setHoverButton] = useState(false)
     const [hoverButtonValue, setHoverButtonValue] = useState('none')
-    const [opacity1, setOpacity1] = useState('opacity_low')
-    const [opacity2, setOpacity2] = useState('opacity_low')
-    const [opacity3, setOpacity3] = useState('opacity_low')
-    const [opacity4, setOpacity4] = useState('opacity_low')
-    const [opacity5, setOpacity5] = useState('opacity_low')
-    const [opacity6, setOpacity6] = useState('opacity_low')
-    const [opacity7, setOpacity7] = useState('opacity_low')
-    const [opacity8, setOpacity8] = useState('opacity_low')
 
     useGSAP(() => {
         var tl = gsap.timeline({repeat: -1,});
@@ -135,6 +127,21 @@ const Team = () => {
             }
         })
 
+        var tl_main = gsap.timeline({repeat: -1,});
+        tl_main.to("#Complete_div", {
+            scale:1.03,
+            y: 15,
+            duration: 15,
+            ease: "sine.inOut"
+        })
+        tl_main.to("#Complete_div", {
+            scale:1,
+            y: 0,
+            duration: 15,
+            ease: "sine.inOut"
+        })
+
+
     },[])
 
     useGSAP(() => {
@@ -151,6 +158,39 @@ const Team = () => {
                 duration: 0.5,
                 ease: "back.in(1.7)"
             })*/
+                var elements = document.getElementsByClassName("personblock")
+                var i
+                for(i = 0; i < elements.length; i++){
+                    elements[i].classList.remove("active2")
+                }
+
+                switch(picCase){
+            
+                    case 'first': 
+                        document.getElementById("First_selector").classList.add("active2")
+                        break
+                    case 'second': 
+                        document.getElementById("Second_selector").classList.add("active2")
+                        break
+                    case 'third': 
+                        document.getElementById("Third_selector").classList.add("active2")
+                        break
+                    case 'fourth': 
+                        document.getElementById("Fourth_selector").classList.add("active2")
+                        break
+                    case 'fifth': 
+                        document.getElementById("Fifth_selector").classList.add("active2")
+                        break
+                    case 'sixth': 
+                        document.getElementById("Sixth_selector").classList.add("active2")
+                        break
+                    case 'seventh': 
+                        document.getElementById("Seventh_selector").classList.add("active2")
+                        break
+                    case 'eight': 
+                        document.getElementById("Eight_selector").classList.add("active2")
+                        break
+                }
 
             setOldPicCase(picCase)
             document.getElementById('selector_people').style.pointerEvents = 'none';
@@ -158,6 +198,7 @@ const Team = () => {
             gsap.to("#pic_small", {
                 scale: 0,
                 ease: "back.in(1.7)",
+                delay: 0.1,
                 })
 
             gsap.to("#textGrow1", {
@@ -168,11 +209,13 @@ const Team = () => {
             gsap.to("#textGrow2", {
                 scale: 0,
                 ease: "back.in(1.7)",
+                delay: 0.15,
                 })
 
             gsap.to("#textGrow3", {
                 scale: 0,
                 ease: "back.in(1.7)",
+                delay: 0.2,
                 })
 
             gsap.to("#Name_tag", {
@@ -189,7 +232,7 @@ const Team = () => {
 
             setTimeout(function () {
                 setAnimateIn(true)
-            }, 500);
+            }, 700);
             setAnimateOut(false)
         } else { 
             setAnimateOut(false)
@@ -214,6 +257,7 @@ const Team = () => {
             gsap.to("#pic_small", {
                 scale: 1,
                 ease: "back.out(1.3)",
+                delay: 0.1,
             })
 
             gsap.to("#textGrow1", {
@@ -224,11 +268,13 @@ const Team = () => {
             gsap.to("#textGrow2", {
                 scale: 1,
                 ease: "back.out(1.3)",
+                delay: 0.15,
                 })
 
             gsap.to("#textGrow3", {
                 scale: 1,
                 ease: "back.out(1.3)",
+                delay: 0.2,
                 })
 
             gsap.fromTo("#Name_tag", {
@@ -262,7 +308,9 @@ const Team = () => {
     
     useEffect(() => {
         if(animateIn == true){
+            
         switch(picCase){
+            
             case 'first': 
                 setPicture(SAEROYISIMG)
                 setText('Saeroyi')
@@ -278,6 +326,7 @@ const Team = () => {
                 setTxtMes3('you know him well')
                 setTxtMes4('Revenge is Sweet')
                 setClassSmallPic('blue_small_image')
+                document.getElementById("First_selector").classList.add("active2")
                 break
             case 'second': 
                 setPicture(YISEOIMG)
@@ -294,6 +343,7 @@ const Team = () => {
                 setTxtMes3('She gets it done!')
                 setTxtMes4('Never skip a meal')
                 setClassSmallPic('red_small_image')
+                document.getElementById("Second_selector").classList.add("active2")
                 break
             case 'third': 
                 setPicture(SOOAHIMG)
@@ -305,11 +355,12 @@ const Team = () => {
                 setClassnameMessage2Func('yellow_second_message')
                 setClassnameMessage2ContFunc('yellow_second_message_cont')
                 setClassnameMessage3Func('yellow_third_message')
-                setTxtMes1('#leader')
-                setTxtMes2("He's the leader of the bunch,")
-                setTxtMes3('you know him well')
-                setTxtMes4('Never skip a meal')
+                setTxtMes1('#Visitor')
+                setTxtMes2("Knowledge is power")
+                setTxtMes3('')
+                setTxtMes4('Great taste')
                 setClassSmallPic('yellow_small_image')
+                document.getElementById("Third_selector").classList.add("active2")
                 break
             case 'fourth': 
                 setPicture(HYEONIIMG)
@@ -322,10 +373,11 @@ const Team = () => {
                 setClassnameMessage2ContFunc('blue_second_message_cont')
                 setClassnameMessage3Func('blue_third_message')
                 setTxtMes1('#Chef')
-                setTxtMes2("He's the leader of the bunch,")
-                setTxtMes3('you know him well')
-                setTxtMes4('Never skip a meal')
+                setTxtMes2("The Kitchen is her second home")
+                setTxtMes3('')
+                setTxtMes4('Let her cook!')
                 setClassSmallPic('blue_small_image')
+                document.getElementById("Fourth_selector").classList.add("active2")
                 break
             case 'fifth': 
                 setPicture(SEUNGGWONIMG)
@@ -337,11 +389,12 @@ const Team = () => {
                 setClassnameMessage2Func('red_second_message')
                 setClassnameMessage2ContFunc('red_second_message_cont')
                 setClassnameMessage3Func('red_third_message')
-                setTxtMes1('#leader')
+                setTxtMes1('#Waiter')
                 setTxtMes2("He's the leader of the bunch,")
                 setTxtMes3('you know him well')
-                setTxtMes4('Never skip a meal')
+                setTxtMes4('Off duty bouncer')
                 setClassSmallPic('red_small_image')
+                document.getElementById("Fifth_selector").classList.add("active2")
                 break
             case 'sixth': 
                 setPicture(GEUNSOOIMG)
@@ -353,11 +406,12 @@ const Team = () => {
                 setClassnameMessage2Func('yellow_second_message')
                 setClassnameMessage2ContFunc('yellow_second_message_cont')
                 setClassnameMessage3Func('yellow_third_message')
-                setTxtMes1('#leader')
+                setTxtMes1('#Waiter')
                 setTxtMes2("He's the leader of the bunch,")
                 setTxtMes3('you know him well')
-                setTxtMes4('Never stop smiling')
+                setTxtMes4('Ruthless')
                 setClassSmallPic('yellow_small_image')
+                document.getElementById("Sixth_selector").classList.add("active2")
                 break
             case 'seventh': 
                 setPicture(TONIIMG)
@@ -369,11 +423,12 @@ const Team = () => {
                 setClassnameMessage2Func('blue_second_message')
                 setClassnameMessage2ContFunc('blue_second_message_cont')
                 setClassnameMessage3Func('blue_third_message')
-                setTxtMes1('#leader')
+                setTxtMes1('#Waiter')
                 setTxtMes2("He's the leader of the bunch,")
                 setTxtMes3('you know him well')
                 setTxtMes4('Never skip a meal')
                 setClassSmallPic('blue_small_image')
+                document.getElementById("Seventh_selector").classList.add("active2")
                 break
             case 'eight': 
                 setPicture(DADIMG)
@@ -386,10 +441,11 @@ const Team = () => {
                 setClassnameMessage2ContFunc('red_second_message_cont')
                 setClassnameMessage3Func('red_third_message')
                 setTxtMes1('#Original')
-                setTxtMes2("He's the leader of the bunch,")
-                setTxtMes3('you know him well')
+                setTxtMes2("His dream became reality")
+                setTxtMes3('')
                 setTxtMes4("Boss' boss")
                 setClassSmallPic('red_small_image')
+                document.getElementById("Eight_selector").classList.add("active2")
                 break
         }
         setAnimateIn(false)
@@ -398,39 +454,37 @@ const Team = () => {
     },[animateIn])
 
     useGSAP(() => {
-        setOpacity1('opacity_low')
-            setOpacity2('opacity_low')
-            setOpacity3('opacity_low')
-            setOpacity4('opacity_low')
-            setOpacity5('opacity_low')
-            setOpacity6('opacity_low')
-            setOpacity7('opacity_low')
-            setOpacity8('opacity_low')
+        
+        var elements = document.getElementsByClassName("personblock")
+        var i
+        for(i = 0; i < elements.length; i++){
+            elements[i].classList.remove("active")
+        }
         if(hoverButton == true){
             switch(hoverButtonValue){
                 case 'first':
-                    setOpacity1('opacity_high')
+                    document.getElementById("First_selector").classList.add("active")
                 break
                 case 'second':
-                    setOpacity2('opacity_high')
+                    document.getElementById("Second_selector").classList.add("active")
                 break
                 case 'third':
-                    setOpacity3('opacity_high')
+                    document.getElementById("Third_selector").classList.add("active")
                 break
                 case 'fourth':
-                    setOpacity4('opacity_high')
+                    document.getElementById("Fourth_selector").classList.add("active")
                 break
                 case 'fifth':
-                    setOpacity5('opacity_high')
+                    document.getElementById("Fifth_selector").classList.add("active")
                 break
                 case 'sixth':
-                    setOpacity6('opacity_high')
+                    document.getElementById("Sixth_selector").classList.add("active")
                 break
                 case 'seventh':
-                    setOpacity7('opacity_high')
+                    document.getElementById("Seventh_selector").classList.add("active")
                 break
                 case 'eight':
-                    setOpacity8('opacity_high')
+                    document.getElementById("Eight_selector").classList.add("active")
                 break
             }
         }   
@@ -446,7 +500,8 @@ const Team = () => {
             </div>
         </div>
         <div className="flex justify-center py-4">
-            <div className="relative max-w-[90vw] md:max-w-[92vw] flex lg:flex-row flex-col justify-between md:gap-6 lg:gap-10 xl:gap-16 items-center pt-[2vh]">
+            <div  className="relative max-w-[90vw] md:max-w-[92vw] flex lg:flex-row flex-col justify-between md:gap-6 lg:gap-10 xl:gap-16 items-center pt-[2vh]">
+                <div id="Complete_div">
                     <div>
                         <div className={classnameFunc}>
                                 <p id="Name_tag" className="font-semibold text-4xl z-50">{text}</p>
@@ -497,62 +552,63 @@ const Team = () => {
                         </div>
                     </div>
                     </div>
-                <div id="selector_people" className="person-selector items-center md:inline-block xl:flex hidden lg:overflow-y-scroll xl:overflow-hidden min-h-0 lg:h-[600px]">
+                    </div>
+                <div id="selector_people" className="person-selector items-center md:inline-block xl:flex hidden lg:overflow-y-scroll xl:overflow-visible min-h-0 lg:max-h-[600px] p-4">
                     <div className="flex flex-row flex-wrap justify-center lg:flex-nowrap lg:flex-col xl:flex-row xl:flex-wrap gap-4 lg:gap-4 md:max-w-[700px] 2xl:max-w-[376px] xl:max-w-[316px]">
-                        <div onMouseOver={() => {setHoverButton(true); setHoverButtonValue('first')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('first'); setAnimateOut(true)}} className="personblock">
-                            <img src={BILLLIEIMG} alt="BILLLIE IMG"  id="First_image" className={opacity1}/>
+                        <div id="First_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('first')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('first'); setAnimateOut(true)}} className="personblock">
+                            {/*<img src={BILLLIEIMG} alt="BILLLIE IMG"  id="First_image" className={opacity1}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className="text-2xl"> Saeroyi</p>
-                                <p className=" font-light"> Boss</p>
+                                <p className="text-2xl font-light"> Saeroyi</p>
+                                <p className=" font-extralight text-xs"> Boss</p>
                             </div>
                         </div>
-                        <div onMouseOver={() => {setHoverButton(true); setHoverButtonValue('second')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('second'); setAnimateOut(true)}} className="personblock lg:mt-12 xl:mt-0">
-                            <img src={IRENEIMG} alt="IRENE IMG"  id="Second_image" className={opacity2}/>
+                        <div id="Second_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('second')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('second'); setAnimateOut(true)}} className="personblock lg:mt-12 xl:mt-0">
+                            {/*<img src={IRENEIMG} alt="IRENE IMG"  id="Second_image" className={opacity2}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-2xl"> Yiseo</p>
-                                <p className=" font-light"> Manager</p>
+                                <p className="text-2xl font-light"> Yiseo</p>
+                                <p className="font-extralight text-xs"> Manager</p>
                             </div>
                         </div>
-                        <div onMouseOver={() => {setHoverButton(true); setHoverButtonValue('third')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('third'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            <img src={PIXXIEIMG} alt="PIXXIE IMG"  id="Third_image" className={opacity3}/>
+                        <div id="Third_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('third')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('third'); setAnimateOut(true)}} className="personblock lg:mt-12">
+                            {/*<img src={PIXXIEIMG} alt="PIXXIE IMG"  id="Third_image" className={opacity3}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-2xl">SooAh</p>
-                                <p className=" font-light">Visitor</p>
+                                <p className=" text-2xl font-light">SooAh</p>
+                                <p className=" font-extralight text-xs">Visitor</p>
                             </div>
                         </div>
-                        <div onMouseOver={() => {setHoverButton(true); setHoverButtonValue('fourth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('fourth'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            <img src={PIXXIE2IMG} alt="PIXXIE 2 IMG"  id="Fourth_image" className={opacity4}/>
+                        <div id="Fourth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('fourth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('fourth'); setAnimateOut(true)}} className="personblock lg:mt-12">
+                            {/*<img src={PIXXIE2IMG} alt="PIXXIE 2 IMG"  id="Fourth_image" className={opacity4}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className="text-2xl">Hyeoni</p>
-                                <p className=" font-light">Chef</p>
+                                <p className="text-2xl font-light">Hyeoni</p>
+                                <p className=" font-extralight text-xs">Chef</p>
                             </div>
                         </div>
-                        <div onMouseOver={() => {setHoverButton(true); setHoverButtonValue('fifth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('fifth'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            <img src={PIXXIE3IMG} alt="PIXXIE 3 IMG"  id="Fifth_image" className={opacity5}/>
+                        <div id="Fifth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('fifth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('fifth'); setAnimateOut(true)}} className="personblock lg:mt-12">
+                            {/*<img src={PIXXIE3IMG} alt="PIXXIE 3 IMG"  id="Fifth_image" className={opacity5}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-2xl">Seunggwon</p>
-                                <p className=" font-light">Waiter</p>
+                                <p className=" text-2xl font-light">Seunggwon</p>
+                                <p className=" font-extralight text-xs">Waiter</p>
                             </div>
                         </div>
-                        <div onMouseOver={() => {setHoverButton(true); setHoverButtonValue('sixth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('sixth'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            <img src={SIYEONIMG} alt="SIYEON IMG"  id="Sixth_image" className={opacity6}/>
+                        <div id="Sixth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('sixth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('sixth'); setAnimateOut(true)}} className="personblock lg:mt-12">
+                            {/*<img src={SIYEONIMG} alt="SIYEON IMG"  id="Sixth_image" className={opacity6}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-2xl">Geunsoo</p>
-                                <p className=" font-light">Waiter</p>
+                                <p className=" text-2xl font-light">Geunsoo</p>
+                                <p className=" font-extralight text-xs">Waiter</p>
                             </div>
                         </div>
-                        <div onMouseOver={() => {setHoverButton(true); setHoverButtonValue('seventh')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('seventh'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            <img src={SJUKSEEIMG} alt="SJUKSEE IMG"  id="Seventh_image" className={opacity7}/>
+                        <div id="Seventh_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('seventh')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('seventh'); setAnimateOut(true)}} className="personblock lg:mt-12">
+                            {/*<img src={SJUKSEEIMG} alt="SJUKSEE IMG"  id="Seventh_image" className={opacity7}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-2xl">Toni</p>
-                                <p className=" font-light">Waiter</p>
+                                <p className=" text-2xl font-light">Toni</p>
+                                <p className=" font-extralight text-xs">Waiter</p>
                             </div>
                         </div>
-                        <div onMouseOver={() => {setHoverButton(true); setHoverButtonValue('eight')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('eight'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            <img src={YUKIIMG} alt="YUKI IMG"  id="Eight_image" className={opacity8}/>
+                        <div id="Eight_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('eight')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('eight'); setAnimateOut(true)}} className="personblock lg:mt-12">
+                            {/*<img src={YUKIIMG} alt="YUKI IMG"  id="Eight_image" className={opacity8}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-2xl">Mr. Park</p>
-                                <p className=" font-light">Boss&#39; boss</p>
+                                <p className=" text-2xl font-light">Mr. Park</p>
+                                <p className=" font-extralight text-xs">Boss&#39; boss</p>
                             </div>
                         </div>
                     </div>
