@@ -71,7 +71,10 @@
 
 .person-selector::-webkit-scrollbar{
   display: none;
-  
+}
+
+::-webkit-scrollbar{
+display: none;
 }
 
 #selector_people {
