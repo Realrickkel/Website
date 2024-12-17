@@ -107,13 +107,13 @@ backdrop-filter: blur(5px);
 .blue_first_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-@apply flex items-center justify-center top-48 left-28 absolute w-[150px] h-[50px] scale-75 bg-white rounded-2xl p-2
+@apply flex items-center justify-center top-48 left-28 absolute w-[150px] h-[50px] scale-75 bg-blue-800 rounded-2xl p-2
 }
 
 .blue_second_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-@apply flex items-center justify-center w-[230px] h-[70px] bg-white rounded-2xl  p-2
+@apply flex gap-1 items-center justify-center w-[230px] h-[70px] bg-white rounded-2xl p-2
 }
 
 .blue_second_message_cont {
@@ -135,7 +135,7 @@ backdrop-filter: blur(5px);
 .red_second_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-  @apply flex items-center justify-center w-[230px] h-[70px] bg-red-400 rounded-2xl  p-2 z-40
+  @apply flex items-center justify-center w-[230px] h-[70px] rounded-2xl bg-white p-2 z-40
 }
 
 .red_second_message_cont {
@@ -145,19 +145,19 @@ backdrop-filter: blur(5px);
 .red_third_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-  @apply flex items-center justify-center bottom-44 left-36 absolute w-[150px] h-[50px] bg-red-400 rounded-2xl p-2
+  @apply flex items-center justify-center bottom-44 left-36 absolute w-[150px] h-[50px] bg-white rounded-2xl p-2
 }
 
 .yellow_first_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-  @apply flex items-center justify-center bottom-48 left-36 absolute w-[150px] h-[50px] bg-yellow-400 rounded-2xl p-2
+  @apply flex items-center justify-center bottom-48 left-36 absolute w-[150px] h-[50px] bg-green-600 rounded-2xl p-2
 }
 
 .yellow_second_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-  @apply flex items-center justify-center w-[230px] h-[70px] bg-yellow-400 rounded-2xl p-2 z-40
+  @apply flex items-center justify-center w-[230px] h-[70px] bg-white rounded-2xl p-2 z-40
 }
 
 .yellow_second_message_cont {
@@ -167,7 +167,7 @@ backdrop-filter: blur(5px);
 .yellow_third_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-  @apply flex items-center justify-center top-48 left-24 absolute w-[150px] h-[50px] bg-yellow-400 rounded-2xl p-2
+  @apply flex items-center justify-center top-48 left-24 absolute w-[150px] h-[50px] bg-white rounded-2xl p-2
 }
 
 .blue_small_image {
@@ -205,3 +205,90 @@ backdrop-filter: blur(5px);
  .opacity_high {
   @apply object-contain max-w-full opacity-100
  }
+
+ .icon_blue {
+  filter: drop-shadow(5px 5px 5px #0000008b);
+  -webkit-filter: drop-shadow(5px 5px 5px #0000008b);
+  @apply absolute -bottom-8 -right-8 h-[50px] w-[50px] rounded-2xl bg-blue-800 flex justify-center items-center
+ }
+
+ .icon_red {
+  filter: drop-shadow(5px 5px 5px #0000008b);
+  -webkit-filter: drop-shadow(5px 5px 5px #0000008b);
+  @apply absolute -bottom-8 -left-8 h-[50px] w-[50px] rounded-2xl bg-red-400 flex justify-center items-center
+ }
+
+ .icon_yellow {
+  filter: drop-shadow(5px 5px 5px #0000008b);
+  -webkit-filter: drop-shadow(5px 5px 5px #0000008b);
+  @apply absolute -top-6 -left-6 h-[50px] w-[50px] rounded-2xl bg-green-600 flex justify-center items-center
+ }
+
+ .icon_blue i {
+  font-size: 1.5rem;
+ }
+
+ .icon_red i {
+  font-size: 1.5rem;
+ }
+
+ .icon_yellow i {
+  font-size: 1.5rem;
+ }
+
+ .Main_title {
+  font-family: 'Neonderthaw', sans-serif;
+ }
+
+ .Main_title_black {
+  font-family: 'Neonderthaw', sans-serif;
+ }
+
+ .Main_title_shadow1 {
+  filter: drop-shadow(0px 0px 4px #ffffff);
+  -webkit-filter: drop-shadow(0px 0px 4px #ffffff);
+  font-family: 'Neonderthaw', sans-serif;
+ }
+ .Main_title_shadow2 {
+  filter: drop-shadow(10px 0px 20px #9d48ff);
+  -webkit-filter: drop-shadow(10px 0px 20px #9d48ff);
+  font-family: 'Neonderthaw', sans-serif;
+ }
+ .Main_title_shadow3 {
+  filter: drop-shadow(10px 10px 50px #a85cff);
+  -webkit-filter: drop-shadow(10px 10px 50px #a85cff);
+  font-family: 'Neonderthaw', sans-serif;
+ }
+ .Main_title_shadow4 {
+  filter: drop-shadow(10px 10px 120px #a85cff);
+  -webkit-filter: drop-shadow(10px 10px 120px #a85cff);
+  font-family: 'Neonderthaw', sans-serif;
+ }
+
+ .loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  flex: 1;
+}
+
+.loader i
+{
+  opacity: 0.2;
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin{
+  from {
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}

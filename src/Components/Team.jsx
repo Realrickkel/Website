@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react"
-import { DADIMG, DADSMALLIMG, GEUNSOOIMG, GEUNSOOSMALLIMG, HYEONIIMG, HYEONISMALLIMG, INSTABGBOTIMG, INSTABGTOPIMG, SAEROYISIMG, SAEROYISMALLIMG, SEUNGGWONIMG, SEUNGGWONSMALLIMG, SOOAHIMG, SOOAHSMALLIMG, TONIIMG, TONISMALLIMG, YISEOIMG, YISEOSMALLIMG } from "../utils"
+import { useContext, useEffect, useState } from "react"
+import { DADIMG, DADSMALLIMG, GEUNSOOIMG, GEUNSOOSMALLIMG, HYEONIIMG, HYEONISMALLIMG, INSTABGBOTIMG, INSTABGTOP2IMG, INSTABGTOP3IMG, INSTABGTOP4IMG, INSTABGTOP5IMG, INSTABGTOP6IMG, INSTABGTOP7IMG, INSTABGTOP8IMG, INSTABGTOPIMG, SAEROYISIMG, SAEROYISMALLIMG, SEUNGGWONIMG, SEUNGGWONSMALLIMG, SOOAHIMG, SOOAHSMALLIMG, TONIIMG, TONISMALLIMG, YISEOIMG, YISEOSMALLIMG } from "../utils"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
 import { ScrollTrigger } from "gsap/all";
+import { Context } from "../context/Context";
 gsap.registerPlugin(ScrollTrigger)
 
 const Team = () => {
+    const {loaded, setLoaded} = useContext(Context)
+    const[scrollt, setScrollt] = useState(false)
     const [picture, setPicture] = useState(SAEROYISIMG)
     const [pictureSmall, setPictureSmall] = useState(SAEROYISMALLIMG)
+    const [bgPIC, setBgPIC] = useState(INSTABGTOPIMG)
     const [text, setText] = useState('Saeroyi')
     const [picCase, setPicCase] = useState('first')
     const [oldPicCase, setOldPicCase] = useState('first')
@@ -18,6 +22,8 @@ const Team = () => {
     const [classnameMessage2Func,setClassnameMessage2Func] = useState('blue_second_message')
     const [classnameMessage2ContFunc,setClassnameMessage2ContFunc] = useState('blue_second_message_cont')
     const [classnameMessage3Func,setClassnameMessage3Func] = useState('blue_third_message')
+    const [classnameIcon,setClassnameIcon] = useState('icon_blue')
+    const [Icon,setIcon] = useState('fa-regular fa-heart')
     const [classSmallPic,setClassSmallPic] = useState('blue_small_image')
     const [txtMes1,setTxtMes1] = useState('#Boss')
     const [txtMes2,setTxtMes2] = useState("He's the leader of the bunch,")
@@ -28,6 +34,33 @@ const Team = () => {
     const [animateIn2, setAnimateIn2] = useState(false)
     const [hoverButton, setHoverButton] = useState(false)
     const [hoverButtonValue, setHoverButtonValue] = useState('none')
+
+    useEffect(() => {
+        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+          setTimeout(function () {
+              setLoaded(true)
+            }, 1000);
+      });
+        //disable scroll until page is loaded
+        window.onscroll = function () {
+        window.scrollTo(0, 0);
+    };  
+      }, [])
+    
+    
+      useEffect(() => {
+        if(loaded === true){
+            //laat alles inladen
+            setTimeout(function () {
+                setScrollt(true)
+                }, 100); 
+                window.onscroll = function () { };
+        }
+      },[loaded])
+
+      useEffect(() => {
+        ScrollTrigger.refresh()
+    },[scrollt])
 
     useGSAP(() => {
         var tl = gsap.timeline({repeat: -1,});
@@ -316,6 +349,7 @@ const Team = () => {
                 setText('Saeroyi')
                 setClassnameFunc("blueClass")
                 setPictureSmall(SAEROYISMALLIMG)
+                setBgPIC(INSTABGTOPIMG)
                 setBgImage('bg_image_blue')
                 setClassnameMessage1Func('blue_first_message')
                 setClassnameMessage2Func('blue_second_message')
@@ -326,6 +360,8 @@ const Team = () => {
                 setTxtMes3('you know him well')
                 setTxtMes4('Revenge is Sweet')
                 setClassSmallPic('blue_small_image')
+                setClassnameIcon('icon_blue')
+                setIcon('fa-regular fa-star')
                 document.getElementById("First_selector").classList.add("active2")
                 break
             case 'second': 
@@ -333,6 +369,7 @@ const Team = () => {
                 setText('Yiseo')
                 setClassnameFunc("redClass")
                 setPictureSmall(YISEOSMALLIMG)
+                setBgPIC(INSTABGTOP2IMG)
                 setBgImage('bg_image_red')
                 setClassnameMessage1Func('red_first_message')
                 setClassnameMessage2Func('red_second_message')
@@ -343,6 +380,8 @@ const Team = () => {
                 setTxtMes3('She gets it done!')
                 setTxtMes4('Never skip a meal')
                 setClassSmallPic('red_small_image')
+                setClassnameIcon('icon_red')
+                setIcon('fa-regular fa-heart')
                 document.getElementById("Second_selector").classList.add("active2")
                 break
             case 'third': 
@@ -350,6 +389,7 @@ const Team = () => {
                 setText('SooAh')
                 setClassnameFunc("yellowClass")
                 setPictureSmall(SOOAHSMALLIMG)
+                setBgPIC(INSTABGTOP3IMG)
                 setBgImage('bg_image_yellow')
                 setClassnameMessage1Func('yellow_first_message')
                 setClassnameMessage2Func('yellow_second_message')
@@ -360,6 +400,8 @@ const Team = () => {
                 setTxtMes3('')
                 setTxtMes4('Great taste')
                 setClassSmallPic('yellow_small_image')
+                setClassnameIcon('icon_yellow')
+                setIcon('fa-regular fa-comment')
                 document.getElementById("Third_selector").classList.add("active2")
                 break
             case 'fourth': 
@@ -367,6 +409,7 @@ const Team = () => {
                 setText('Hyeoni')
                 setClassnameFunc("blueClass")
                 setPictureSmall(HYEONISMALLIMG)
+                setBgPIC(INSTABGTOP4IMG)
                 setBgImage('bg_image_blue')
                 setClassnameMessage1Func('blue_first_message')
                 setClassnameMessage2Func('blue_second_message')
@@ -377,6 +420,8 @@ const Team = () => {
                 setTxtMes3('')
                 setTxtMes4('Let her cook!')
                 setClassSmallPic('blue_small_image')
+                setClassnameIcon('icon_blue')
+                setIcon('fa-regular fa-chess-rook')
                 document.getElementById("Fourth_selector").classList.add("active2")
                 break
             case 'fifth': 
@@ -384,16 +429,19 @@ const Team = () => {
                 setText('Seunggwon')
                 setClassnameFunc("redClass")
                 setPictureSmall(SEUNGGWONSMALLIMG)
+                setBgPIC(INSTABGTOP5IMG)
                 setBgImage('bg_image_red')
                 setClassnameMessage1Func('red_first_message')
                 setClassnameMessage2Func('red_second_message')
                 setClassnameMessage2ContFunc('red_second_message_cont')
                 setClassnameMessage3Func('red_third_message')
                 setTxtMes1('#Waiter')
-                setTxtMes2("He's the leader of the bunch,")
-                setTxtMes3('you know him well')
+                setTxtMes2("Actually a nice dude")
+                setTxtMes3("if you don't betray him")
                 setTxtMes4('Off duty bouncer')
                 setClassSmallPic('red_small_image')
+                setClassnameIcon('icon_red')
+                setIcon('fa-regular fa-hand-back-fist')
                 document.getElementById("Fifth_selector").classList.add("active2")
                 break
             case 'sixth': 
@@ -401,16 +449,19 @@ const Team = () => {
                 setText('Geunsoo')
                 setClassnameFunc("yellowClass")
                 setPictureSmall(GEUNSOOSMALLIMG)
+                setBgPIC(INSTABGTOP6IMG)
                 setBgImage('bg_image_yellow')
                 setClassnameMessage1Func('yellow_first_message')
                 setClassnameMessage2Func('yellow_second_message')
                 setClassnameMessage2ContFunc('yellow_second_message_cont')
                 setClassnameMessage3Func('yellow_third_message')
                 setTxtMes1('#Waiter')
-                setTxtMes2("He's the leader of the bunch,")
-                setTxtMes3('you know him well')
+                setTxtMes2("Will reach his goals")
+                setTxtMes3('no matter what')
                 setTxtMes4('Ruthless')
                 setClassSmallPic('yellow_small_image')
+                setClassnameIcon('icon_yellow')
+                setIcon('fa-regular fa-moon')
                 document.getElementById("Sixth_selector").classList.add("active2")
                 break
             case 'seventh': 
@@ -418,16 +469,19 @@ const Team = () => {
                 setText('Toni')
                 setClassnameFunc("blueClass")
                 setPictureSmall(TONISMALLIMG)
+                setBgPIC(INSTABGTOP7IMG)
                 setBgImage('bg_image_blue')
                 setClassnameMessage1Func('blue_first_message')
                 setClassnameMessage2Func('blue_second_message')
                 setClassnameMessage2ContFunc('blue_second_message_cont')
                 setClassnameMessage3Func('blue_third_message')
                 setTxtMes1('#Waiter')
-                setTxtMes2("He's the leader of the bunch,")
-                setTxtMes3('you know him well')
-                setTxtMes4('Never skip a meal')
+                setTxtMes2("Can't stop smiling")
+                setTxtMes3('')
+                setTxtMes4('What is English?')
                 setClassSmallPic('blue_small_image')
+                setClassnameIcon('icon_blue')
+                setIcon('fa-solid fa-magnifying-glass')
                 document.getElementById("Seventh_selector").classList.add("active2")
                 break
             case 'eight': 
@@ -435,6 +489,7 @@ const Team = () => {
                 setText('Mr. Park')
                 setClassnameFunc("redClass")
                 setPictureSmall(DADSMALLIMG)
+                setBgPIC(INSTABGTOP8IMG)
                 setBgImage('bg_image_red')
                 setClassnameMessage1Func('red_first_message')
                 setClassnameMessage2Func('red_second_message')
@@ -445,6 +500,8 @@ const Team = () => {
                 setTxtMes3('')
                 setTxtMes4("Boss' boss")
                 setClassSmallPic('red_small_image')
+                setClassnameIcon('icon_red')
+                setIcon('fa-solid fa-compress')
                 document.getElementById("Eight_selector").classList.add("active2")
                 break
         }
@@ -514,7 +571,7 @@ const Team = () => {
                                         <img src={picture} alt="MAIN IMG" id="big_picture" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
                                     </div>
                                     <div className="absolute top-0 left-0 flex justify-center w-[90vw] sm:w-[576px] md:w-[700px] lg:w-[760px] xl:w-[800px] 2xl:w-[960px] md:h-[740px] overflow-hidden ">
-                                        <img src={INSTABGTOPIMG} alt="MAIN IMG" id="instagram_image" className="object-contain z-0 shadow-lg shadow-zinc-800 m-12 min-h-fit rounded-2xl"/>
+                                        <img src={bgPIC} alt="MAIN IMG" id="instagram_image" className="object-contain z-0 shadow-lg shadow-zinc-800 m-12 min-h-fit rounded-2xl"/>
                                     </div>
                                     <div className="absolute top-0 left-0 flex justify-center w-[90vw] sm:w-[576px] md:w-[700px] lg:w-[760px] xl:w-[800px] 2xl:w-[960px] md:h-[740px] overflow-hidden">
                                         <img src={INSTABGBOTIMG} alt="MAIN IMG" id="" className="object-contain z-20 m-12 rounded-2xl"/>
@@ -537,15 +594,16 @@ const Team = () => {
                                     </div>
 
                                 <div id="textGrow1" className={classnameMessage1Func}>
-                                    <p className="text-sm text-black font-light">{txtMes1}</p>
+                                    <p className="text-sm font-light">{txtMes1}</p>
                                 </div>
                                 <div id="textGrow2_cont" className={classnameMessage2ContFunc}>
                                     <div id="textGrow2" className={classnameMessage2Func}>
-                                        <p className="text-xs text-black font-light"><span className="text-sm font-light">{txtMes2}</span><br/>{txtMes3}</p>
+                                    <div className={classnameIcon}><i className={Icon}></i></div>
+                                        <p className="text-xs text-zinc-800 font-light"><span className="text-sm font-light">{txtMes2}</span><br/>{txtMes3}</p>
                                     </div>
-                                </div>
+                                    </div>
                                 <div id="textGrow3" className={classnameMessage3Func}>
-                                    <p className="text-sm text-black font-light">{txtMes4}</p>
+                                    <p className="text-sm text-zinc-800 font-light">{txtMes4}</p>
                                 </div>
                                 
                             </div>

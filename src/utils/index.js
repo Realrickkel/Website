@@ -1,5 +1,12 @@
 import instabgbotimg from "/assets/images/Instagram_background_bot.webp";
 import instabgtopimg from "/assets/images/Instagram_background_topwebp.webp";
+import instabgtop2img from "/assets/images/Instagram_background_top2WEBP.webp";
+import instabgtop3img from "/assets/images/Instagram_background_top3WEBP.webp";
+import instabgtop4img from "/assets/images/Instagram_background_top4WEBP.webp";
+import instabgtop5img from "/assets/images/Instagram_background_top5WEBP.webp";
+import instabgtop6img from "/assets/images/Instagram_background_top6WEBP.webp";
+import instabgtop7img from "/assets/images/Instagram_background_top7WEBP.webp";
+import instabgtop8img from "/assets/images/Instagram_background_top8WEBP.webp";
 
 import BG1img from "/assets/images/interior1v2WEBP.webp";
 import BG2img from "/assets/images/interior2v2WEBP.webp";
@@ -25,6 +32,13 @@ import DadSmallimg from "/assets/images/Appa2WEBP.webp";
 
 export const INSTABGBOTIMG = instabgbotimg;
 export const INSTABGTOPIMG = instabgtopimg;
+export const INSTABGTOP2IMG = instabgtop2img;
+export const INSTABGTOP3IMG = instabgtop3img;
+export const INSTABGTOP4IMG = instabgtop4img;
+export const INSTABGTOP5IMG = instabgtop5img;
+export const INSTABGTOP6IMG = instabgtop6img;
+export const INSTABGTOP7IMG = instabgtop7img;
+export const INSTABGTOP8IMG = instabgtop8img;
 
 export const BG1IMG = BG1img;
 export const BG2IMG = BG2img;
