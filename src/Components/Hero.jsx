@@ -73,16 +73,16 @@ useGSAP(() => {
                 <div className="screen-max-width">
                     <div className="flex flex-col justify-between h-screen items-center p-20">
                         <div className="flex flex-col justify-center items-center h-[70vh] gap-4">
-                            <h2 className="text-6xl text-white">
+                            <h2 className="text-2xl md:text-6xl text-white">
                                 Welcome to:
                             </h2>
                             <div className="relative">
-                                <h1 className="Main_title_black text-9xl text-[#363636]">DanBam</h1>
-                                <h1 className="Main_title opacity-0 text-9xl absolute top-0 left-0 text-[#7c0aff]">DanBam</h1>
-                                <h1 className="Main_title_shadow1 fadeInWhite absolute top-0 left-0 opacity-0 text-9xl text-[#7c0aff]">DanBam</h1>
-                                <h1 className="Main_title_shadow2 fadeIn absolute top-0 left-0 opacity-0 text-9xl text-[#7c0aff]">DanBam</h1>
-                                <h1 className="Main_title_shadow3 fadeIn absolute top-0 left-0 opacity-0 text-9xl text-[#7c0aff]">DanBam</h1>
-                                <h1 className="Main_title_shadow4 fadeIn absolute top-0 left-0 opacity-0 text-9xl text-[#7c0aff]">DanBam</h1>
+                                <h1 className="Main_title_black text-6xl md:text-9xl text-[#363636]">DanBam</h1>
+                                <h1 className="Main_title opacity-0 text-6xl md:text-9xl absolute top-0 left-0 text-[#7c0aff]">DanBam</h1>
+                                <h1 className="Main_title_shadow1 fadeInWhite absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">DanBam</h1>
+                                <h1 className="Main_title_shadow2 fadeIn absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">DanBam</h1>
+                                <h1 className="Main_title_shadow3 fadeIn absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">DanBam</h1>
+                                <h1 className="Main_title_shadow4 fadeIn absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">DanBam</h1>
                             </div>
                         </div>
                         <div className="flex justify-center items-center flex-col">
