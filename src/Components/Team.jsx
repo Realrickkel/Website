@@ -552,8 +552,13 @@ const Team = () => {
                 break
         }
         //have the pictures load in here by chance, have to load them in here yes
+        var newImage = new Image()
+        newImage.onload = () => {
             setAnimateIn(false)
             setAnimateIn2(true)
+        }
+        newImage.src = picture
+            
     }
     },[animateIn])
 
