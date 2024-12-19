@@ -558,7 +558,7 @@ const Team = () => {
         setAnimateIn(false)
         setTimeout(function () {
             setAnimateIn2(true)
-          }, 700);
+          }, 100);
             
     }
     },[animateIn])
