@@ -212,6 +212,7 @@ const Team = () => {
                 duration: 0.5,
                 ease: "back.in(1.7)"
             })*/
+                
                 var elements = document.getElementsByClassName("personblock")
                 var i
                 for(i = 0; i < elements.length; i++){
@@ -295,13 +296,15 @@ const Team = () => {
                 ease: "back.in(1.7)",
                 })
             
-            setTimeout(function () {
-                setAnimateIn(true)
-            }, 700);
+            
+            
             setAnimateOut(false)
             setOldPicture(picture)
             setOldSmallPicture(pictureSmall)
             setOldBgPIC(bgPIC)
+            setTimeout(function () {
+                setAnimateIn(true)
+              }, 700);
         } else { 
             setAnimateOut(false)
         }
@@ -552,15 +555,10 @@ const Team = () => {
                 break
         }
         //have the pictures load in here by chance, have to load them in here yes
-
-        var newImage = new Image()
-        newImage.onload = () => {
-            setTimeout(function () {
-                setAnimateIn(false)
-                setAnimateIn2(true)
-            }, 200);
-        }
-        newImage.src = picture
+        setAnimateIn(false)
+        setTimeout(function () {
+            setAnimateIn2(true)
+          }, 700);
             
     }
     },[animateIn])
