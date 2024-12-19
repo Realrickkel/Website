@@ -41,7 +41,8 @@ const Team = () => {
     useEffect(() => {
         Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
           setTimeout(function () {
-              setLoaded(true)
+                console.log('images finished loading');
+                setLoaded(true)
             }, 1000);
       });
         //disable scroll until page is loaded
@@ -212,6 +213,9 @@ const Team = () => {
                 duration: 0.5,
                 ease: "back.in(1.7)"
             })*/
+                setOldPicture(picture)
+                setOldSmallPicture(pictureSmall)
+                setOldBgPIC(bgPIC)
                 
                 var elements = document.getElementsByClassName("personblock")
                 var i
@@ -295,16 +299,11 @@ const Team = () => {
                 opacity: 0,
                 ease: "back.in(1.7)",
                 })
-            
-            
-            
             setAnimateOut(false)
-            setOldPicture(picture)
-            setOldSmallPicture(pictureSmall)
-            setOldBgPIC(bgPIC)
             setTimeout(function () {
                 setAnimateIn(true)
               }, 700);
+
         } else { 
             setAnimateOut(false)
         }
@@ -312,7 +311,7 @@ const Team = () => {
     },[animateOut])
 
     useGSAP(() => {
-        if(oldPicture != picture && oldSmallPicture != pictureSmall && oldBgPIC != bgPIC){
+        
         if(animateIn2 == true){
             /*gsap.to("#big_group" , {
                 opacity: 1,
@@ -386,12 +385,16 @@ const Team = () => {
             
             setAnimateIn2(false)
         }
-    }
+    
     },[animateIn2])
 
     
     useEffect(() => {
-        if(animateIn == true){  
+        if(animateIn == true){
+            console.log(oldPicture)
+            console.log(oldSmallPicture)  
+            console.log(oldBgPIC)
+
         switch(picCase){
             case 'first': 
                 setPicture(SAEROYISIMG)
@@ -554,12 +557,11 @@ const Team = () => {
                 document.getElementById("Eight_selector").classList.add("active2")
                 break
         }
+
         //have the pictures load in here by chance, have to load them in here yes
         setAnimateIn(false)
-        setTimeout(function () {
-            setAnimateIn2(true)
-          }, 100);
-            
+        setAnimateIn2(true)
+        
     }
     },[animateIn])
 
