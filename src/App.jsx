@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import Hero from "./Components/hero"
+import Hero from "./Components/Hero"
 import Team from "./Components/Team"
 import { Context } from "./context/Context"
 import Ending from "./Components/Ending"

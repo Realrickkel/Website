@@ -1,8 +1,3 @@
-import { useGSAP } from "@gsap/react"
-import gsap from "gsap"
-import { Context } from "../context/Context"
-import { useContext } from "react"
-
 const Ending = () => {
 
   return (
