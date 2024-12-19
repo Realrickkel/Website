@@ -36,11 +36,11 @@ const Team = () => {
     const [hoverButtonValue, setHoverButtonValue] = useState('none')
 
     useEffect(() => {
-        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
-          setTimeout(function () {
-              setLoaded(true)
-            }, 1000);
-      });
+        var weaponSprite = new Image()
+        weaponSprite.onload = () => {
+            setLoaded(true)
+        }
+        weaponSprite.src = SAEROYISIMG
         //disable scroll until page is loaded
         window.onscroll = function () {
         window.scrollTo(0, 0);
