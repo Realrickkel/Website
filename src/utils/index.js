@@ -27,7 +27,7 @@ import Dadmimg from "/assets/images/DadWEBP.webp";
 
 import SaeroyiSmallimg from "/assets/images/Saeroyi2WEBP.webp";
 import YiseoSmallimg from "/assets/images/Yiseo2WEBP.webp";
-import SooAhSmallimg from "/assets/images/SooAh2WEBP.webp";
+import SooAhSmallimg from "/assets/images/Sooah2WEBP.webp";
 import HyeoniSmallimg from "/assets/images/Hyeoni2WEBP.webp";
 import SeunggwonSmallimg from "/assets/images/Seunggwon2WEBP.webp";
 import GeunsooSmallimg from "/assets/images/Geunsoo2WEBP.webp";
