@@ -328,7 +328,7 @@ const Team = () => {
             gsap.to("#pic_small", {
                 scale: 1,
                 ease: "back.out(1.3)",
-                delay: 0.1,
+                delay: 0.5,
             })
 
             gsap.to("#textGrow1", {
@@ -372,11 +372,13 @@ const Team = () => {
             gsap.fromTo(".Main_img", {
                 x: 500,
                 opacity: 0,
+                
             },
                 {
                 x: 0,
                 opacity: 1,
                 ease: "back.out(1.3)",
+                delay: 0.5,
                 })
                 
                 setTimeout(function () {
@@ -561,8 +563,8 @@ const Team = () => {
         //have the pictures load in here by chance, have to load them in here yes
         setAnimateIn(false)
         setAnimateIn2(true)
-        
     }
+
     },[animateIn])
 
     useGSAP(() => {
