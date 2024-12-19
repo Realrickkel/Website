@@ -12,6 +12,9 @@ const Team = () => {
     const[scrollt, setScrollt] = useState(false)
     const [picture, setPicture] = useState(SAEROYISIMG)
     const [pictureSmall, setPictureSmall] = useState(SAEROYISMALLIMG)
+    const [oldPicture, setOldPicture] = useState()
+    const [oldSmallPicture, setOldSmallPicture] = useState()
+    const [oldBgPIC, setOldBgPIC] = useState()
     const [bgPIC, setBgPIC] = useState(INSTABGTOPIMG)
     const [text, setText] = useState('Saeroyi')
     const [picCase, setPicCase] = useState('first')
@@ -296,6 +299,9 @@ const Team = () => {
                 setAnimateIn(true)
             }, 700);
             setAnimateOut(false)
+            setOldPicture(picture)
+            setOldSmallPicture(pictureSmall)
+            setOldBgPIC(bgPIC)
         } else { 
             setAnimateOut(false)
         }
@@ -303,6 +309,7 @@ const Team = () => {
     },[animateOut])
 
     useGSAP(() => {
+        if(oldPicture != picture && oldSmallPicture != pictureSmall && oldBgPIC != bgPIC){
         if(animateIn2 == true){
             /*gsap.to("#big_group" , {
                 opacity: 1,
@@ -376,13 +383,13 @@ const Team = () => {
             
             setAnimateIn2(false)
         }
+    }
     },[animateIn2])
 
     
     useEffect(() => {
         if(animateIn == true){  
         switch(picCase){
-            
             case 'first': 
                 setPicture(SAEROYISIMG)
                 setText('Saeroyi')
@@ -402,7 +409,6 @@ const Team = () => {
                 setClassnameIcon('icon_blue')
                 setIcon('fa-regular fa-star')
                 document.getElementById("First_selector").classList.add("active2")
-                setAnimateIn2(true)
                 break
             case 'second': 
                 setPicture(YISEOIMG)
@@ -423,7 +429,6 @@ const Team = () => {
                 setClassnameIcon('icon_red')
                 setIcon('fa-regular fa-heart')
                 document.getElementById("Second_selector").classList.add("active2")
-                setAnimateIn2(true)
                 break
             case 'third': 
                 setPicture(SOOAHIMG)
@@ -444,7 +449,6 @@ const Team = () => {
                 setClassnameIcon('icon_yellow')
                 setIcon('fa-regular fa-comment')
                 document.getElementById("Third_selector").classList.add("active2")
-                setAnimateIn2(true)
                 break
             case 'fourth': 
                 setPicture(HYEONIIMG)
@@ -465,7 +469,6 @@ const Team = () => {
                 setClassnameIcon('icon_blue')
                 setIcon('fa-regular fa-chess-rook')
                 document.getElementById("Fourth_selector").classList.add("active2")
-                setAnimateIn2(true)
                 break
             case 'fifth': 
                 setPicture(SEUNGGWONIMG)
@@ -486,7 +489,6 @@ const Team = () => {
                 setClassnameIcon('icon_red')
                 setIcon('fa-regular fa-hand-back-fist')
                 document.getElementById("Fifth_selector").classList.add("active2")
-                setAnimateIn2(true)
                 break
             case 'sixth': 
                 setPicture(GEUNSOOIMG)
@@ -507,7 +509,6 @@ const Team = () => {
                 setClassnameIcon('icon_yellow')
                 setIcon('fa-regular fa-moon')
                 document.getElementById("Sixth_selector").classList.add("active2")
-                setAnimateIn2(true)
                 break
             case 'seventh': 
                 setPicture(TONIIMG)
@@ -528,7 +529,6 @@ const Team = () => {
                 setClassnameIcon('icon_blue')
                 setIcon('fa-solid fa-magnifying-glass')
                 document.getElementById("Seventh_selector").classList.add("active2")
-                setAnimateIn2(true)
                 break
             case 'eight': 
                 setPicture(DADIMG)
@@ -549,12 +549,11 @@ const Team = () => {
                 setClassnameIcon('icon_red')
                 setIcon('fa-solid fa-compress')
                 document.getElementById("Eight_selector").classList.add("active2")
-                setAnimateIn2(true)
                 break
         }
         //have the pictures load in here by chance, have to load them in here yes
-        setAnimateIn(false)
-        
+            setAnimateIn(false)
+            setAnimateIn2(true)
     }
     },[animateIn])
 
