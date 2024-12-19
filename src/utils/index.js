@@ -31,7 +31,7 @@ import SooAhSmallimg from "/assets/images/SooAh2WEBP.webp";
 import HyeoniSmallimg from "/assets/images/Hyeoni2WEBP.webp";
 import SeunggwonSmallimg from "/assets/images/Seunggwon2WEBP.webp";
 import GeunsooSmallimg from "/assets/images/Geunsoo2WEBP.webp";
-import ToniSmallimg from "/assets/images/Toni2WEBP.webp";
+import ToniSmallimg from "/assets/images/toni2WEBP.webp";
 import DadSmallimg from "/assets/images/Appa2WEBP.webp";
 
 export const INSTAGRAMIMG = Instagramimg;
