@@ -328,7 +328,7 @@ const Team = () => {
             gsap.to("#pic_small", {
                 scale: 1,
                 ease: "back.out(1.3)",
-                delay: 0.5,
+                delay: 0.3,
             })
 
             gsap.to("#textGrow1", {
