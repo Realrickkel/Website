@@ -2,6 +2,8 @@ import { useContext, useEffect } from "react"
 import Hero from "./Components/hero"
 import Team from "./Components/Team"
 import { Context } from "./context/Context"
+import Ending from "./Components/Ending"
+import Footer from "./Components/Footer"
 
 const App = () => {
   const {loaded, setLoaded} = useContext(Context)
@@ -24,7 +26,8 @@ const App = () => {
         </div>
       <Hero/>
       <Team/>
-      <Hero/>
+      <Ending/>
+      <Footer/>
     </main>
   )
 }

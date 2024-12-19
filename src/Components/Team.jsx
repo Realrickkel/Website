@@ -127,6 +127,24 @@ const Team = () => {
             }
         })
 
+        gsap.to("#textGrow4", {
+            y: -90,
+            scrollTrigger: {
+                trigger: '#textGrow4',
+                start: 'top 100%',
+                scrub: 5,
+            }
+        })
+
+        gsap.to("#textGrow6", {
+            y: -40,
+            scrollTrigger: {
+                trigger: '#textGrow6',
+                start: 'top 100%',
+                scrub: 5,
+            }
+        })
+
         gsap.fromTo("#big_group", {
             y: 40,
         },{
@@ -239,6 +257,11 @@ const Team = () => {
                 ease: "back.in(1.7)",
                 })
             
+                gsap.to("#textGrow4", {
+                    scale: 0,
+                    ease: "back.in(1.7)",
+                    })
+
             gsap.to("#textGrow2", {
                 scale: 0,
                 ease: "back.in(1.7)",
@@ -251,6 +274,12 @@ const Team = () => {
                 delay: 0.2,
                 })
 
+                gsap.to("#textGrow6", {
+                    scale: 0,
+                    ease: "back.in(1.7)",
+                    delay: 0.2,
+                    })
+
             gsap.to("#Name_tag", {
                 x: -500,
                 opacity: 0,
@@ -262,7 +291,7 @@ const Team = () => {
                 opacity: 0,
                 ease: "back.in(1.7)",
                 })
-
+            //have the pictures load in here by chance?
             setTimeout(function () {
                 setAnimateIn(true)
             }, 700);
@@ -297,6 +326,11 @@ const Team = () => {
                 scale: 1,
                 ease: "back.out(1.3)",
                 })
+
+                gsap.to("#textGrow4", {
+                    scale: 1,
+                    ease: "back.out(1.3)",
+                    })
             
             gsap.to("#textGrow2", {
                 scale: 1,
@@ -309,6 +343,12 @@ const Team = () => {
                 ease: "back.out(1.3)",
                 delay: 0.2,
                 })
+
+                gsap.to("#textGrow6", {
+                    scale: 1,
+                    ease: "back.out(1.3)",
+                    delay: 0.2,
+                    })
 
             gsap.fromTo("#Name_tag", {
                 x: 500,
@@ -340,8 +380,7 @@ const Team = () => {
 
     
     useEffect(() => {
-        if(animateIn == true){
-            
+        if(animateIn == true){  
         switch(picCase){
             
             case 'first': 
@@ -549,21 +588,21 @@ const Team = () => {
     },[hoverButtonValue, hoverButton])
 
   return (
-    <section id="asjemenou" className={bgImage}>
+    <section id="TeamPage" className={bgImage}>
         <div className="flex justify-center">
             
-            <div className="flex justify-start w-[90vw] sm:w-[576px] md:w-[700px] lg:w-[950px] xl:w-[1180px] 2xl:w-[1400px]">
+            <div className="flex md:justify-start justify-center w-[90vw] sm:w-[576px] md:w-[700px] lg:w-[950px] xl:w-[1180px] 2xl:w-[1400px]">
                 <h2 className="text-4xl md:text-7xl font-bold">Meet the team!</h2>
             </div>
         </div>
         <div className="flex justify-center py-4">
-            <div  className="relative max-w-[90vw] md:max-w-[92vw] flex lg:flex-row flex-col justify-between sm:gap-6 lg:gap-24 xl:gap-16 items-center pt-[2vh]">
+            <div  className="relative max-w-[90vw] md:max-w-[92vw] flex lg:flex-row flex-col justify-between gap-16 sm:gap-6 lg:gap-24 xl:gap-16 items-center pt-[2vh]">
                 <div id="Complete_div">
                     <div>
                         <div className={classnameFunc}>
-                                <p id="Name_tag" className="font-semibold text-4xl z-50 absolute top-0">{text}</p>
+                                <p id="Name_tag" className="w-min h-min font-semibold text-xl sm:text-4xl z-50 absolute top-0">{text}</p>
                         </div>
-                    <div className="flex justify-center items-center h-[80vh] sm:h-[740px]">
+                    <div className="flex justify-center items-center h-fit sm:h-[740px]">
                         {/*Desktop*/}
                         <div id="big_group" className="relative opacity-1 screen-max-width hidden sm:flex flex-col items-center h-[80vh] sm:h-[740px]">
                             <div className="">
@@ -611,30 +650,25 @@ const Team = () => {
                         </div>
 
                         {/*Mobile*/}
-                        <div id="big_group" className="relative opacity-1 screen-max-width flex sm:hidden flex-col items-center w-fit">
-                            <div className="">
-                                <div className="Main_img flex justify-center relative bg-green-600 w-fit overflow-hidden">
-                                    <div className="flex justify-center items-end w-[80vw] pt-[25vw]">
+                        <div id="big_group" className="relative opacity-1 screen-max-width flex sm:hidden flex-col items-center h-fit w-fit">
+                            <div className="relative h-fit w-fit">
+                                <div className="Main_img flex justify-center relative w-fit overflow-hidden">
+                                    <div className="flex justify-center items-end w-[80vw] pt-[10vh]">
                                         <img src={bgPIC} alt="MAIN IMG" id="instagram_image" className="object-contain z-0 shadow-lg rounded-2xl"/>
                                     </div>
-                                    <div className="flex w-[60vw] absolute bottom-0">
+                                    <div className="flex max-h-[100%] absolute bottom-0">
                                         <img src={picture} alt="MAIN IMG" id="big_picture" className="object-contain z-10"/>
                                     </div>
-                                    <div className="absolute bottom-0 left-0 w-[80vw] pt-24 z-20">
+                                    <div className="absolute bottom-0 left-0 w-[80vw] z-20">
                                         <img src={INSTABGBOTIMG} alt="MAIN IMG" id="instagram_image" className="object-contain  shadow-lg rounded-2xl"/>
                                     </div>                            
                                 </div>
 
-                                <div id="textGrow1" className={classnameMessage1Func}>
+                                <div id="textGrow4" className={classnameMessage1Func}>
                                     <p className="text-sm font-light">{txtMes1}</p>
                                 </div>
-                                <div id="textGrow2_cont" className={classnameMessage2ContFunc}>
-                                    <div id="textGrow2" className={classnameMessage2Func}>
-                                    <div className={classnameIcon}><i className={Icon}></i></div>
-                                        <p className="text-xs text-zinc-800 font-light"><span className="text-sm font-light">{txtMes2}</span><br/>{txtMes3}</p>
-                                    </div>
-                                    </div>
-                                <div id="textGrow3" className={classnameMessage3Func}>
+                                
+                                <div id="textGrow6" className={classnameMessage3Func}>
                                     <p className="text-sm text-zinc-800 font-light">{txtMes4}</p>
                                 </div>
                                 
@@ -644,62 +678,62 @@ const Team = () => {
                     </div>
                     </div>
                     </div>
-                <div id="selector_people" className="person-selector items-center sm:inline-block xl:flex hidden lg:overflow-y-scroll xl:overflow-visible min-h-0 md:max-w-[700px] lg:max-h-[600px] 2xl:max-w-[408px] xl:max-w-[353px] p-4">
-                    <div className="flex flex-row flex-wrap justify-center lg:flex-nowrap lg:flex-col xl:flex-row xl:flex-wrap gap-4 lg:gap-4 md:max-w-[700px] 2xl:max-w-[376px] xl:max-w-[353px]">
+                <div id="selector_people" className="person-selector items-center inline-block xl:flex lg:overflow-y-scroll xl:overflow-visible min-h-0 md:max-w-[700px] lg:max-h-[600px] 2xl:max-w-[408px] xl:max-w-[353px] p-4">
+                    <div className="flex flex-row flex-nowrap md:flex-wrap justify-center lg:flex-nowrap lg:flex-col xl:flex-row xl:flex-wrap gap-4 lg:gap-4 md:max-w-[700px] 2xl:max-w-[376px] xl:max-w-[353px]">
                         <div id="First_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('first')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('first'); setAnimateOut(true)}} className="personblock">
                             {/*<img src={BILLLIEIMG} alt="BILLLIE IMG"  id="First_image" className={opacity1}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className="text-2xl font-light"> Saeroyi</p>
-                                <p className=" font-extralight text-xs"> Boss</p>
+                                <p className="hidden md:inline-block text-2xl font-light"> Saeroyi</p>
+                                <p className="hidden md:inline-block font-extralight text-xs"> Boss</p>
                             </div>
                         </div>
                         <div id="Second_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('second')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('second'); setAnimateOut(true)}} className="personblock lg:mt-12 xl:mt-0">
                             {/*<img src={IRENEIMG} alt="IRENE IMG"  id="Second_image" className={opacity2}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className="text-xl 2xl:text-2xl font-light"> Yiseo</p>
-                                <p className="font-extralight text-xs"> Manager</p>
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light"> Yiseo</p>
+                                <p className="hidden md:inline-block font-extralight text-xs"> Manager</p>
                             </div>
                         </div>
                         <div id="Third_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('third')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('third'); setAnimateOut(true)}} className="personblock lg:mt-12">
                             {/*<img src={PIXXIEIMG} alt="PIXXIE IMG"  id="Third_image" className={opacity3}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-xl 2xl:text-2xl font-light">SooAh</p>
-                                <p className=" font-extralight text-xs">Visitor</p>
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">SooAh</p>
+                                <p className="hidden md:inline-block font-extralight text-xs">Visitor</p>
                             </div>
                         </div>
                         <div id="Fourth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('fourth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('fourth'); setAnimateOut(true)}} className="personblock lg:mt-12">
                             {/*<img src={PIXXIE2IMG} alt="PIXXIE 2 IMG"  id="Fourth_image" className={opacity4}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className="text-xl 2xl:text-2xl font-light">Hyeoni</p>
-                                <p className=" font-extralight text-xs">Chef</p>
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Hyeoni</p>
+                                <p className="hidden md:inline-block font-extralight text-xs">Chef</p>
                             </div>
                         </div>
                         <div id="Fifth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('fifth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('fifth'); setAnimateOut(true)}} className="personblock lg:mt-12">
                             {/*<img src={PIXXIE3IMG} alt="PIXXIE 3 IMG"  id="Fifth_image" className={opacity5}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-xl 2xl:text-2xl font-light">Seunggwon</p>
-                                <p className=" font-extralight text-xs">Waiter</p>
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Seunggwon</p>
+                                <p className="hidden md:inline-block font-extralight text-xs">Waiter</p>
                             </div>
                         </div>
                         <div id="Sixth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('sixth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('sixth'); setAnimateOut(true)}} className="personblock lg:mt-12">
                             {/*<img src={SIYEONIMG} alt="SIYEON IMG"  id="Sixth_image" className={opacity6}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-xl 2xl:text-2xl font-light">Geunsoo</p>
-                                <p className=" font-extralight text-xs">Waiter</p>
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Geunsoo</p>
+                                <p className="hidden md:inline-block font-extralight text-xs">Waiter</p>
                             </div>
                         </div>
                         <div id="Seventh_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('seventh')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('seventh'); setAnimateOut(true)}} className="personblock lg:mt-12">
                             {/*<img src={SJUKSEEIMG} alt="SJUKSEE IMG"  id="Seventh_image" className={opacity7}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-xl 2xl:text-2xl font-light">Toni</p>
-                                <p className=" font-extralight text-xs">Waiter</p>
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Toni</p>
+                                <p className="hidden md:inline-block font-extralight text-xs">Waiter</p>
                             </div>
                         </div>
                         <div id="Eight_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('eight')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('eight'); setAnimateOut(true)}} className="personblock lg:mt-12">
                             {/*<img src={YUKIIMG} alt="YUKI IMG"  id="Eight_image" className={opacity8}/>*/}
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className=" text-xl 2xl:text-2xl font-light">Mr. Park</p>
-                                <p className=" font-extralight text-xs">Boss&#39; boss</p>
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Mr. Park</p>
+                                <p className="hidden md:inline-block font-extralight text-xs">Boss&#39; boss</p>
                             </div>
                         </div>
                     </div>

@@ -67,7 +67,7 @@ useGSAP(() => {
 },[loaded])
 
   return (
-    <section className="w-screen h-screen bg-black">
+    <section className="w-screen h-screen bg-black overflow-hidden">
         <div className="flex justify-center">
             <div className="flex justify-center max-w-[90vw] md:max-w-[76vw]">
                 <div className="screen-max-width">
@@ -77,12 +77,12 @@ useGSAP(() => {
                                 Welcome to:
                             </h2>
                             <div className="relative">
-                                <h1 className="Main_title_black text-6xl md:text-9xl text-[#363636]">DanBam</h1>
-                                <h1 className="Main_title opacity-0 text-6xl md:text-9xl absolute top-0 left-0 text-[#7c0aff]">DanBam</h1>
-                                <h1 className="Main_title_shadow1 fadeInWhite absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">DanBam</h1>
-                                <h1 className="Main_title_shadow2 fadeIn absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">DanBam</h1>
-                                <h1 className="Main_title_shadow3 fadeIn absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">DanBam</h1>
-                                <h1 className="Main_title_shadow4 fadeIn absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">DanBam</h1>
+                                <h1 className="Main_title_black text-nowrap text-6xl md:text-9xl text-[#363636]">Demo Cafe</h1>
+                                <h1 className="Main_title text-nowrap opacity-0 text-6xl md:text-9xl absolute top-0 left-0 text-[#7c0aff]">Demo Cafe</h1>
+                                <h1 className="Main_title_shadow1 text-nowrap fadeInWhite absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">Demo Cafe</h1>
+                                <h1 className="Main_title_shadow2 text-nowrap fadeIn absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">Demo Cafe</h1>
+                                <h1 className="Main_title_shadow3 text-nowrap fadeIn absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">Demo Cafe</h1>
+                                <h1 className="Main_title_shadow4 text-nowrap fadeIn absolute top-0 left-0 opacity-0 text-6xl md:text-9xl text-[#7c0aff]">Demo Cafe</h1>
                             </div>
                         </div>
                         <div className="flex justify-center items-center flex-col">
