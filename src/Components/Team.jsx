@@ -35,6 +35,8 @@ const Team = () => {
     const [animateOut, setAnimateOut] = useState(false)
     const [animateIn, setAnimateIn] = useState(true)
     const [animateIn2, setAnimateIn2] = useState(false)
+    const [animateIn3, setAnimateIn3] = useState(false)
+    const [animateIn4, setAnimateIn4] = useState(false)
     const [hoverButton, setHoverButton] = useState(false)
     const [hoverButtonValue, setHoverButtonValue] = useState('none')
 
@@ -562,10 +564,26 @@ const Team = () => {
 
         //have the pictures load in here by chance, have to load them in here yes
         setAnimateIn(false)
-        setAnimateIn2(true)
+        setAnimateIn3(true)
     }
 
     },[animateIn])
+
+    useEffect(() => {
+
+        //code voor laadschermpje terwijl de afbeeldingen laden
+        var newImg = new Image()
+        newImg.onload = () => {
+            setAnimateIn4(true)
+        }
+        newImg.src = picture
+
+        if(animateIn4){
+            setAnimateIn2(true)
+            setAnimateIn3(false)
+        }
+
+    },[animateIn3, animateIn4])
 
     useGSAP(() => {
         
