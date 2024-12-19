@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { DADIMG, DADSMALLIMG, GEUNSOOIMG, GEUNSOOSMALLIMG, HYEONIIMG, HYEONISMALLIMG, INSTABGBOTIMG, INSTABGTOP2IMG, INSTABGTOP3IMG, INSTABGTOP4IMG, INSTABGTOP5IMG, INSTABGTOP6IMG, INSTABGTOP7IMG, INSTABGTOP8IMG, INSTABGTOPIMG, SAEROYISIMG, SAEROYISMALLIMG, SEUNGGWONIMG, SEUNGGWONSMALLIMG, SOOAHIMG, SOOAHSMALLIMG, TONIIMG, TONISMALLIMG, YISEOIMG, YISEOSMALLIMG } from "../utils"
+import { DADIMG, DADSMALLIMG, GEUNSOOIMG, GEUNSOOSMALLIMG, HYEONIIMG, HYEONISMALLIMG, INSTABGBOTIMG, INSTABGTOP2IMG, INSTABGTOP3IMG, INSTABGTOP4IMG, INSTABGTOP5IMG, INSTABGTOP6IMG, INSTABGTOP7IMG, INSTABGTOP8IMG, INSTABGTOPIMG, SAEROYISIMG, SAEROYISMALLIMG, SEUNGGWONIMG, SEUNGGWONSMALLIMG, SOOAHIMG, SOOAHSMALLIMG, TONIIMG, TONISMALLIMG, YISEOIMG, YISEOSMALLIMG, TESTIMG } from "../utils"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
@@ -43,7 +43,7 @@ const Team = () => {
           setTimeout(function () {
                 console.log('images finished loading');
                 setLoaded(true)
-            }, 1000);
+            }, 10);
       });
         //disable scroll until page is loaded
         window.onscroll = function () {
@@ -328,7 +328,7 @@ const Team = () => {
             gsap.to("#pic_small", {
                 scale: 1,
                 ease: "back.out(1.3)",
-                delay: 0.3,
+                delay: 0.2,
             })
 
             gsap.to("#textGrow1", {
@@ -378,7 +378,7 @@ const Team = () => {
                 x: 0,
                 opacity: 1,
                 ease: "back.out(1.3)",
-                delay: 0.5,
+                delay: 0.1,
                 })
                 
                 setTimeout(function () {
@@ -621,6 +621,33 @@ const Team = () => {
                                 <p id="Name_tag" className="w-min h-min font-semibold text-xl sm:text-4xl z-50 absolute top-0">{text}</p>
                         </div>
                     <div className="flex justify-center items-center h-fit sm:h-[740px]">
+                        {/*Images otherwise we have loading problems*/}
+                        <div className="hidden">
+                        <img src={SAEROYISIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={SAEROYISMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={YISEOIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={YISEOSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={SOOAHIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={SOOAHSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={HYEONIIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={HYEONISMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={GEUNSOOIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={GEUNSOOSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={SEUNGGWONIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={SEUNGGWONSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={TONIIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={TONISMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={DADIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={DADSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={INSTABGBOTIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={INSTABGTOP2IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={INSTABGTOP3IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={INSTABGTOP4IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={INSTABGTOP5IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={INSTABGTOP6IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={INSTABGTOP7IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={INSTABGTOP8IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        </div>
                         {/*Desktop*/}
                         <div id="big_group" className="relative opacity-1 screen-max-width hidden sm:flex flex-col items-center h-[80vh] sm:h-[740px]">
                             <div className="">
@@ -670,6 +697,7 @@ const Team = () => {
                         {/*Mobile*/}
                         <div id="big_group" className="relative opacity-1 screen-max-width flex sm:hidden flex-col items-center h-fit w-fit">
                             <div className="relative h-fit w-fit">
+
                                 <div className="Main_img flex justify-center relative w-fit overflow-hidden">
                                     <div className="flex justify-center items-end w-[80vw] pt-[10vh]">
                                         <img src={bgPIC} alt="MAIN IMG" id="instagram_image" className="object-contain z-0 shadow-lg rounded-2xl"/>

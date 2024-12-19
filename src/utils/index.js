@@ -2,6 +2,8 @@ import Instagramimg from "/assets/images/Instagram_Logo.png";
 import Linkedinimg from "/assets/images/Linkedin_Logo.png";
 import GitHubimg from "/assets/images/GitHub_Logo.png";
 
+import testimg from "/assets/images/Testimg.png";
+
 import instabgbotimg from "/assets/images/Instagram_background_bot.webp";
 import instabgtopimg from "/assets/images/Instagram_background_topwebp.webp";
 import instabgtop2img from "/assets/images/Instagram_background_top2WEBP.webp";
@@ -37,6 +39,8 @@ import DadSmallimg from "/assets/images/Appa2WEBP.webp";
 export const INSTAGRAMIMG = Instagramimg;
 export const LINKEDINIMG = Linkedinimg;
 export const GITHUBIMG = GitHubimg;
+
+export const TESTIMG = testimg;
 
 export const INSTABGBOTIMG = instabgbotimg;
 export const INSTABGTOPIMG = instabgtopimg;
