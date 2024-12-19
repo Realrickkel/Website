@@ -291,7 +291,7 @@ const Team = () => {
                 opacity: 0,
                 ease: "back.in(1.7)",
                 })
-            //have the pictures load in here by chance?
+            
             setTimeout(function () {
                 setAnimateIn(true)
             }, 700);
@@ -544,8 +544,13 @@ const Team = () => {
                 document.getElementById("Eight_selector").classList.add("active2")
                 break
         }
-        setAnimateIn(false)
-        setAnimateIn2(true)
+        //have the pictures load in here by chance, have to load them in here yes
+        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+            setTimeout(function () {
+                setAnimateIn(false)
+                setAnimateIn2(true)
+              }, 100);
+        })
     }
     },[animateIn])
 
