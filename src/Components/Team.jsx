@@ -36,11 +36,11 @@ const Team = () => {
     const [hoverButtonValue, setHoverButtonValue] = useState('none')
 
     useEffect(() => {
-        var weaponSprite = new Image()
-        weaponSprite.onload = () => {
-            setLoaded(true)
-        }
-        weaponSprite.src = SAEROYISIMG
+        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+          setTimeout(function () {
+              setLoaded(true)
+            }, 1000);
+      });
         //disable scroll until page is loaded
         window.onscroll = function () {
         window.scrollTo(0, 0);
@@ -402,6 +402,7 @@ const Team = () => {
                 setClassnameIcon('icon_blue')
                 setIcon('fa-regular fa-star')
                 document.getElementById("First_selector").classList.add("active2")
+                setAnimateIn2(true)
                 break
             case 'second': 
                 setPicture(YISEOIMG)
@@ -422,6 +423,7 @@ const Team = () => {
                 setClassnameIcon('icon_red')
                 setIcon('fa-regular fa-heart')
                 document.getElementById("Second_selector").classList.add("active2")
+                setAnimateIn2(true)
                 break
             case 'third': 
                 setPicture(SOOAHIMG)
@@ -442,6 +444,7 @@ const Team = () => {
                 setClassnameIcon('icon_yellow')
                 setIcon('fa-regular fa-comment')
                 document.getElementById("Third_selector").classList.add("active2")
+                setAnimateIn2(true)
                 break
             case 'fourth': 
                 setPicture(HYEONIIMG)
@@ -462,6 +465,7 @@ const Team = () => {
                 setClassnameIcon('icon_blue')
                 setIcon('fa-regular fa-chess-rook')
                 document.getElementById("Fourth_selector").classList.add("active2")
+                setAnimateIn2(true)
                 break
             case 'fifth': 
                 setPicture(SEUNGGWONIMG)
@@ -482,6 +486,7 @@ const Team = () => {
                 setClassnameIcon('icon_red')
                 setIcon('fa-regular fa-hand-back-fist')
                 document.getElementById("Fifth_selector").classList.add("active2")
+                setAnimateIn2(true)
                 break
             case 'sixth': 
                 setPicture(GEUNSOOIMG)
@@ -502,6 +507,7 @@ const Team = () => {
                 setClassnameIcon('icon_yellow')
                 setIcon('fa-regular fa-moon')
                 document.getElementById("Sixth_selector").classList.add("active2")
+                setAnimateIn2(true)
                 break
             case 'seventh': 
                 setPicture(TONIIMG)
@@ -522,6 +528,7 @@ const Team = () => {
                 setClassnameIcon('icon_blue')
                 setIcon('fa-solid fa-magnifying-glass')
                 document.getElementById("Seventh_selector").classList.add("active2")
+                setAnimateIn2(true)
                 break
             case 'eight': 
                 setPicture(DADIMG)
@@ -542,15 +549,12 @@ const Team = () => {
                 setClassnameIcon('icon_red')
                 setIcon('fa-solid fa-compress')
                 document.getElementById("Eight_selector").classList.add("active2")
+                setAnimateIn2(true)
                 break
         }
         //have the pictures load in here by chance, have to load them in here yes
-        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
-            setTimeout(function () {
-                setAnimateIn(false)
-                setAnimateIn2(true)
-              }, 100);
-        })
+        setAnimateIn(false)
+        
     }
     },[animateIn])
 
