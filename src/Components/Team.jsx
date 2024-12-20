@@ -605,6 +605,7 @@ const Team = () => {
     },[animateIn3, animateIn4, animateIn5, animateIn6])
 
     useEffect(() => {
+        //deze werkt nog niet perfect
         setTimeout(function () {
             if (loadAnimation) {
                 setloadAnimation2(true)
