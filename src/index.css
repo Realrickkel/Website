@@ -90,21 +90,21 @@ backdrop-filter: blur(5px);
   background-size: cover;
   background-blend-mode: darken;
   backdrop-filter: blur(80px);
-  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit 
+  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit overflow-hidden
 }
 
 .bg_image_red {
   background-image: url('../assets/images/interior1v2WEBP.webp');
   background-size: cover;
   background-blend-mode: darken;
-  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit 
+  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit overflow-hidden
 }
 
 .bg_image_yellow {
   background-image: url('../assets/images/interior1v2WEBP.webp');
   background-size: cover;
   background-blend-mode: darken;
-  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit 
+  @apply flex items-center flex-col justify-center w-screen min-h-screen h-fit overflow-hidden
 }
 
 .blue_first_message {
@@ -279,6 +279,25 @@ backdrop-filter: blur(5px);
 }
 
 .loader i
+{
+  opacity: 0.2;
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.loaderSmall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.loaderSmall i
 {
   opacity: 0.2;
   font-size: 3rem;

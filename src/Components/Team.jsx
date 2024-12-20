@@ -14,6 +14,7 @@ const Team = () => {
     const [pictureSmall, setPictureSmall] = useState(SAEROYISMALLIMG)
     const [oldPicture, setOldPicture] = useState()
     const [oldSmallPicture, setOldSmallPicture] = useState()
+    const [loadAnimation, setloadAnimation] = useState(false)
     const [oldBgPIC, setOldBgPIC] = useState()
     const [bgPIC, setBgPIC] = useState(INSTABGTOPIMG)
     const [text, setText] = useState('Saeroyi')
@@ -37,6 +38,8 @@ const Team = () => {
     const [animateIn2, setAnimateIn2] = useState(false)
     const [animateIn3, setAnimateIn3] = useState(false)
     const [animateIn4, setAnimateIn4] = useState(false)
+    const [animateIn5, setAnimateIn5] = useState(false)
+    const [animateIn6, setAnimateIn6] = useState(false)
     const [hoverButton, setHoverButton] = useState(false)
     const [hoverButtonValue, setHoverButtonValue] = useState('none')
 
@@ -565,25 +568,43 @@ const Team = () => {
         //have the pictures load in here by chance, have to load them in here yes
         setAnimateIn(false)
         setAnimateIn3(true)
+        setloadAnimation(true)
     }
 
     },[animateIn])
 
     useEffect(() => {
 
-        //code voor laadschermpje terwijl de afbeeldingen laden
-        var newImg = new Image()
-        newImg.onload = () => {
-            setAnimateIn4(true)
+        if(animateIn3){
+            var newImg = new Image()
+            newImg.onload = () => {
+                setAnimateIn4(true)
+            }
+            newImg.src = picture
+            
+            var newImg2 = new Image()
+            newImg2.onload = () => {
+                setAnimateIn5(true)
+            }
+            newImg2.src = pictureSmall
+            
+            var newImg3 = new Image()
+            newImg3.onload = () => {
+                setAnimateIn6(true)
+            }
+            newImg3.src = bgPIC
         }
-        newImg.src = picture
-
-        if(animateIn4){
+        if(animateIn4 && animateIn5 && animateIn6){
+            
+            setloadAnimation(false)
             setAnimateIn2(true)
             setAnimateIn3(false)
+            setAnimateIn4(false)
+            setAnimateIn5(false)
+            setAnimateIn6(false)
         }
 
-    },[animateIn3, animateIn4])
+    },[animateIn3, animateIn4, animateIn5, animateIn6])
 
     useGSAP(() => {
         
@@ -638,7 +659,7 @@ const Team = () => {
                         <div className={classnameFunc}>
                                 <p id="Name_tag" className="w-min h-min font-semibold text-xl sm:text-4xl z-50 absolute top-0">{text}</p>
                         </div>
-                    <div className="flex justify-center items-center h-fit sm:h-[740px]">
+                        <div className="flex justify-center items-center h-fit sm:h-[740px]">
                         {/*Images otherwise we have loading problems*/}
                         <div className="hidden">
                         <img src={SAEROYISIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
@@ -666,9 +687,19 @@ const Team = () => {
                         <img src={INSTABGTOP7IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
                         <img src={INSTABGTOP8IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
                         </div>
+
                         {/*Desktop*/}
                         <div id="big_group" className="relative opacity-1 screen-max-width hidden sm:flex flex-col items-center h-[80vh] sm:h-[740px]">
+                        
                             <div className="">
+                                {/*loading screen*/}
+                                    <div className="h-full w-full absolute" style={{display: loadAnimation ? 'block' : 'none'}}>
+                                        <div className='loaderSmall'>
+                                            <i className="fa-solid fa-gear"></i>
+                                            <p className="text-xs text-gray font-semibold">Loading...</p>
+                                        </div>
+                                    </div>
+
                                 <div className="Main_img relative w-[80vw] sm:w-auto flex justify-center items-center h-[80vh] sm:h-[740px] overflow-hidden">
                                     <div className="absolute bottom-0 sm:relative flex justify-center w-[80vw] sm:w-[576px] md:w-[700px] lg:w-[600px] xl:w-[760px] 2xl:w-[940px] h-[80vh] sm:h-[740px] overflow-hidden">
                                         <img src={picture} alt="MAIN IMG" id="big_picture" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
@@ -715,6 +746,13 @@ const Team = () => {
                         {/*Mobile*/}
                         <div id="big_group" className="relative opacity-1 screen-max-width flex sm:hidden flex-col items-center h-fit w-fit">
                             <div className="relative h-fit w-fit">
+
+                                    <div className="h-full w-full absolute" style={{display: loadAnimation ? 'block' : 'none'}}>
+                                        <div className='loaderSmall'>
+                                            <i className="fa-solid fa-gear"></i>
+                                            <p className="text-xs text-gray font-semibold">Loading...</p>
+                                        </div>
+                                    </div>
 
                                 <div className="Main_img flex justify-center relative w-fit overflow-hidden">
                                     <div className="flex justify-center items-end w-[80vw] pt-[10vh]">
