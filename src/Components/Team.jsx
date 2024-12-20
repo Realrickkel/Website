@@ -609,7 +609,7 @@ const Team = () => {
             if (loadAnimation) {
                 setloadAnimation2(true)
             }
-        }, 2000);
+        }, 4000);
     },[loadAnimation])
 
     useGSAP(() => {
