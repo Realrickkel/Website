@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { DADIMG, DADSMALLIMG, GEUNSOOIMG, GEUNSOOSMALLIMG, HYEONIIMG, HYEONISMALLIMG, INSTABGBOTIMG, INSTABGTOP2IMG, INSTABGTOP3IMG, INSTABGTOP4IMG, INSTABGTOP5IMG, INSTABGTOP6IMG, INSTABGTOP7IMG, INSTABGTOP8IMG, INSTABGTOPIMG, SAEROYISIMG, SAEROYISMALLIMG, SEUNGGWONIMG, SEUNGGWONSMALLIMG, SOOAHIMG, SOOAHSMALLIMG, TONIIMG, TONISMALLIMG, YISEOIMG, YISEOSMALLIMG, TESTIMG } from "../utils"
+import { DADIMG, DADSMALLIMG, GEUNSOOIMG, GEUNSOOSMALLIMG, HYEONIIMG, HYEONISMALLIMG, INSTABGBOTIMG, INSTABGTOP2IMG, INSTABGTOP3IMG, INSTABGTOP4IMG, INSTABGTOP5IMG, INSTABGTOP6IMG, INSTABGTOP7IMG, INSTABGTOP8IMG, INSTABGTOPIMG, SAEROYISIMG, SAEROYISMALLIMG, SEUNGGWONIMG, SEUNGGWONSMALLIMG, SOOAHIMG, SOOAHSMALLIMG, TONIIMG, TONISMALLIMG, YISEOIMG, YISEOSMALLIMG } from "../utils"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
@@ -15,6 +15,7 @@ const Team = () => {
     const [oldPicture, setOldPicture] = useState()
     const [oldSmallPicture, setOldSmallPicture] = useState()
     const [loadAnimation, setloadAnimation] = useState(false)
+    const [loadAnimation2, setloadAnimation2] = useState(false)
     const [oldBgPIC, setOldBgPIC] = useState()
     const [bgPIC, setBgPIC] = useState(INSTABGTOPIMG)
     const [text, setText] = useState('Saeroyi')
@@ -46,7 +47,6 @@ const Team = () => {
     useEffect(() => {
         Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
           setTimeout(function () {
-                console.log('images finished loading');
                 setLoaded(true)
             }, 10);
       });
@@ -398,9 +398,6 @@ const Team = () => {
     
     useEffect(() => {
         if(animateIn == true){
-            console.log(oldPicture)
-            console.log(oldSmallPicture)  
-            console.log(oldBgPIC)
 
         switch(picCase){
             case 'first': 
@@ -597,6 +594,7 @@ const Team = () => {
         if(animateIn4 && animateIn5 && animateIn6){
             
             setloadAnimation(false)
+            setloadAnimation2(false)
             setAnimateIn2(true)
             setAnimateIn3(false)
             setAnimateIn4(false)
@@ -605,6 +603,14 @@ const Team = () => {
         }
 
     },[animateIn3, animateIn4, animateIn5, animateIn6])
+
+    useEffect(() => {
+        setTimeout(function () {
+            if (loadAnimation) {
+                setloadAnimation2(true)
+            }
+        }, 2000);
+    },[loadAnimation])
 
     useGSAP(() => {
         
@@ -747,7 +753,7 @@ const Team = () => {
                         <div id="big_group" className="relative opacity-1 screen-max-width flex sm:hidden flex-col items-center h-fit w-fit">
                             <div className="relative h-fit w-fit">
 
-                                    <div className="h-full w-full absolute" style={{display: loadAnimation ? 'block' : 'none'}}>
+                                    <div className="h-full w-full absolute" style={{display: loadAnimation2 ? 'block' : 'none'}}>
                                         <div className='loaderSmall'>
                                             <i className="fa-solid fa-gear"></i>
                                             <p className="text-xs text-gray font-semibold">Loading...</p>
