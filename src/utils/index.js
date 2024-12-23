@@ -25,6 +25,15 @@ import Geunsooimg from "/assets/images/GeunsooWEBP.webp";
 import Toniimg from "/assets/images/ToniWEBP.webp";
 import Dadmimg from "/assets/images/DadWEBP.webp";
 
+import S1img from "/assets/images/1WEBP.webp";
+import S2img from "/assets/images/2WEBP.webp";
+import S3img from "/assets/images/3WEBP.webp";
+import S4img from "/assets/images/4WEBP.webp";
+import S5img from "/assets/images/5WEBP.webp";
+import S6img from "/assets/images/6WEBP.webp";
+import S7img from "/assets/images/7WEBP.webp";
+import S8img from "/assets/images/8WEBP.webp";
+
 import SaeroyiSmallimg from "/assets/images/Saeroyi2WEBP.webp";
 import YiseoSmallimg from "/assets/images/Yiseo2WEBP.webp";
 import SooAhSmallimg from "/assets/images/Sooah2WEBP.webp";
@@ -33,6 +42,15 @@ import SeunggwonSmallimg from "/assets/images/Seunggwon2WEBP.webp";
 import GeunsooSmallimg from "/assets/images/Geunsoo2WEBP.webp";
 import ToniSmallimg from "/assets/images/toni2WEBP.webp";
 import DadSmallimg from "/assets/images/Appa2WEBP.webp";
+
+import S1Smallimg from "/assets/images/1SMALLWEBP.webp";
+import S2Smallimg from "/assets/images/2SMALLWEBP.webp";
+import S3Smallimg from "/assets/images/3SMALLWEBP.webp";
+import S4Smallimg from "/assets/images/4SMALLWEBP.webp";
+import S5Smallimg from "/assets/images/5SMALLWEBP.webp";
+import S6Smallimg from "/assets/images/6SMALLWEBP.webp";
+import S7Smallimg from "/assets/images/7SMALLWEBP.webp";
+import S8Smallimg from "/assets/images/8SMALLWEBP.webp";
 
 export const INSTAGRAMIMG = Instagramimg;
 export const LINKEDINIMG = Linkedinimg;
@@ -61,6 +79,15 @@ export const GEUNSOOIMG = Geunsooimg;
 export const TONIIMG = Toniimg;
 export const DADIMG = Dadmimg;
 
+export const S1IMG = S1img;
+export const S2IMG = S2img;
+export const S3IMG = S3img;
+export const S4IMG = S4img;
+export const S5IMG = S5img;
+export const S6IMG = S6img;
+export const S7IMG = S7img;
+export const S8IMG = S8img;
+
 export const SAEROYISMALLIMG = SaeroyiSmallimg;
 export const YISEOSMALLIMG = YiseoSmallimg;
 export const SOOAHSMALLIMG = SooAhSmallimg;
@@ -69,3 +96,12 @@ export const SEUNGGWONSMALLIMG = SeunggwonSmallimg;
 export const GEUNSOOSMALLIMG = GeunsooSmallimg;
 export const TONISMALLIMG = ToniSmallimg;
 export const DADSMALLIMG = DadSmallimg;
+
+export const S1SMALLIMG = S1Smallimg;
+export const S2SMALLIMG = S2Smallimg;
+export const S3SMALLIMG = S3Smallimg;
+export const S4SMALLIMG = S4Smallimg;
+export const S5SMALLIMG = S5Smallimg;
+export const S6SMALLIMG = S6Smallimg;
+export const S7SMALLIMG = S7Smallimg;
+export const S8SMALLIMG = S8Smallimg;

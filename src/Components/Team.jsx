@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { DADIMG, DADSMALLIMG, GEUNSOOIMG, GEUNSOOSMALLIMG, HYEONIIMG, HYEONISMALLIMG, INSTABGBOTIMG, INSTABGTOP2IMG, INSTABGTOP3IMG, INSTABGTOP4IMG, INSTABGTOP5IMG, INSTABGTOP6IMG, INSTABGTOP7IMG, INSTABGTOP8IMG, INSTABGTOPIMG, SAEROYISIMG, SAEROYISMALLIMG, SEUNGGWONIMG, SEUNGGWONSMALLIMG, SOOAHIMG, SOOAHSMALLIMG, TONIIMG, TONISMALLIMG, YISEOIMG, YISEOSMALLIMG } from "../utils"
+import { INSTABGBOTIMG, INSTABGTOP2IMG, INSTABGTOP3IMG, INSTABGTOP4IMG, INSTABGTOP5IMG, INSTABGTOP6IMG, INSTABGTOP7IMG, INSTABGTOP8IMG, INSTABGTOPIMG, S1IMG, S1SMALLIMG, S2IMG, S2SMALLIMG, S3IMG, S3SMALLIMG, S4IMG, S4SMALLIMG, S5IMG, S5SMALLIMG, S6IMG, S6SMALLIMG, S7IMG, S7SMALLIMG, S8IMG, S8SMALLIMG } from "../utils"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger)
 const Team = () => {
     const {loaded, setLoaded} = useContext(Context)
     const[scrollt, setScrollt] = useState(false)
-    const [picture, setPicture] = useState(SAEROYISIMG)
-    const [pictureSmall, setPictureSmall] = useState(SAEROYISMALLIMG)
+    const [picture, setPicture] = useState(S1IMG)
+    const [pictureSmall, setPictureSmall] = useState(S1SMALLIMG)
     const [oldPicture, setOldPicture] = useState()
     const [oldSmallPicture, setOldSmallPicture] = useState()
     const [loadAnimation, setloadAnimation] = useState(false)
@@ -401,10 +401,10 @@ const Team = () => {
 
         switch(picCase){
             case 'first': 
-                setPicture(SAEROYISIMG)
-                setText('Saeroyi')
+                setPicture(S1IMG)
+                setText('David')
                 setClassnameFunc("blueClass")
-                setPictureSmall(SAEROYISMALLIMG)
+                setPictureSmall(S1SMALLIMG)
                 setBgPIC(INSTABGTOPIMG)
                 setBgImage('bg_image_blue')
                 setClassnameMessage1Func('blue_first_message')
@@ -421,10 +421,10 @@ const Team = () => {
                 document.getElementById("First_selector").classList.add("active2")
                 break
             case 'second': 
-                setPicture(YISEOIMG)
+                setPicture(S2IMG)
                 setText('Yiseo')
                 setClassnameFunc("redClass")
-                setPictureSmall(YISEOSMALLIMG)
+                setPictureSmall(S2SMALLIMG)
                 setBgPIC(INSTABGTOP2IMG)
                 setBgImage('bg_image_red')
                 setClassnameMessage1Func('red_first_message')
@@ -441,17 +441,17 @@ const Team = () => {
                 document.getElementById("Second_selector").classList.add("active2")
                 break
             case 'third': 
-                setPicture(SOOAHIMG)
-                setText('SooAh')
+                setPicture(S3IMG)
+                setText('Charlotte')
                 setClassnameFunc("yellowClass")
-                setPictureSmall(SOOAHSMALLIMG)
+                setPictureSmall(S3SMALLIMG)
                 setBgPIC(INSTABGTOP3IMG)
                 setBgImage('bg_image_yellow')
                 setClassnameMessage1Func('yellow_first_message')
                 setClassnameMessage2Func('yellow_second_message')
                 setClassnameMessage2ContFunc('yellow_second_message_cont')
                 setClassnameMessage3Func('yellow_third_message')
-                setTxtMes1('#Visitor')
+                setTxtMes1('#Photographer')
                 setTxtMes2("Knowledge is power")
                 setTxtMes3('')
                 setTxtMes4('Great taste')
@@ -461,10 +461,10 @@ const Team = () => {
                 document.getElementById("Third_selector").classList.add("active2")
                 break
             case 'fourth': 
-                setPicture(HYEONIIMG)
-                setText('Hyeoni')
+                setPicture(S4IMG)
+                setText('Melissa')
                 setClassnameFunc("blueClass")
-                setPictureSmall(HYEONISMALLIMG)
+                setPictureSmall(S4SMALLIMG)
                 setBgPIC(INSTABGTOP4IMG)
                 setBgImage('bg_image_blue')
                 setClassnameMessage1Func('blue_first_message')
@@ -481,10 +481,10 @@ const Team = () => {
                 document.getElementById("Fourth_selector").classList.add("active2")
                 break
             case 'fifth': 
-                setPicture(SEUNGGWONIMG)
-                setText('Seunggwon')
+                setPicture(S6IMG)
+                setText('Toni')
                 setClassnameFunc("redClass")
-                setPictureSmall(SEUNGGWONSMALLIMG)
+                setPictureSmall(S6SMALLIMG)
                 setBgPIC(INSTABGTOP5IMG)
                 setBgImage('bg_image_red')
                 setClassnameMessage1Func('red_first_message')
@@ -501,10 +501,10 @@ const Team = () => {
                 document.getElementById("Fifth_selector").classList.add("active2")
                 break
             case 'sixth': 
-                setPicture(GEUNSOOIMG)
-                setText('Geunsoo')
+                setPicture(S5IMG)
+                setText('Bianca')
                 setClassnameFunc("yellowClass")
-                setPictureSmall(GEUNSOOSMALLIMG)
+                setPictureSmall(S5SMALLIMG)
                 setBgPIC(INSTABGTOP6IMG)
                 setBgImage('bg_image_yellow')
                 setClassnameMessage1Func('yellow_first_message')
@@ -512,7 +512,7 @@ const Team = () => {
                 setClassnameMessage2ContFunc('yellow_second_message_cont')
                 setClassnameMessage3Func('yellow_third_message')
                 setTxtMes1('#Waiter')
-                setTxtMes2("Will reach his goals")
+                setTxtMes2("Will reach her goals")
                 setTxtMes3('no matter what')
                 setTxtMes4('Ruthless')
                 setClassSmallPic('yellow_small_image')
@@ -521,10 +521,10 @@ const Team = () => {
                 document.getElementById("Sixth_selector").classList.add("active2")
                 break
             case 'seventh': 
-                setPicture(TONIIMG)
-                setText('Toni')
+                setPicture(S7IMG)
+                setText('Emma')
                 setClassnameFunc("blueClass")
-                setPictureSmall(TONISMALLIMG)
+                setPictureSmall(S7SMALLIMG)
                 setBgPIC(INSTABGTOP7IMG)
                 setBgImage('bg_image_blue')
                 setClassnameMessage1Func('blue_first_message')
@@ -541,10 +541,10 @@ const Team = () => {
                 document.getElementById("Seventh_selector").classList.add("active2")
                 break
             case 'eight': 
-                setPicture(DADIMG)
+                setPicture(S8IMG)
                 setText('Mr. Park')
                 setClassnameFunc("redClass")
-                setPictureSmall(DADSMALLIMG)
+                setPictureSmall(S8SMALLIMG)
                 setBgPIC(INSTABGTOP8IMG)
                 setBgImage('bg_image_red')
                 setClassnameMessage1Func('red_first_message')
@@ -605,12 +605,12 @@ const Team = () => {
     },[animateIn3, animateIn4, animateIn5, animateIn6])
 
     useEffect(() => {
-        //deze werkt nog niet perfect
-        setTimeout(function () {
+        //deze werkt nog niet perfect de laadanimatie komt te snel alsnog
             if (loadAnimation) {
-                setloadAnimation2(true)
+                setTimeout(function () {
+                    setloadAnimation2(true)
+                }, 4000);
             }
-        }, 4000);
     },[loadAnimation])
 
     useGSAP(() => {
@@ -669,22 +669,22 @@ const Team = () => {
                         <div className="flex justify-center items-center h-fit sm:h-[740px]">
                         {/*Images otherwise we have loading problems*/}
                         <div className="hidden">
-                        <img src={SAEROYISIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={SAEROYISMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={YISEOIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={YISEOSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={SOOAHIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={SOOAHSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={HYEONIIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={HYEONISMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={GEUNSOOIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={GEUNSOOSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={SEUNGGWONIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={SEUNGGWONSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={TONIIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={TONISMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={DADIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
-                        <img src={DADSMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S1IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S1SMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S2IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S2SMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S3IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S3SMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S4IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S4SMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S5IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S5SMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S6IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S6SMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S7IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S7SMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S8IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
+                        <img src={S8SMALLIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
                         <img src={INSTABGBOTIMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
                         <img src={INSTABGTOP2IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
                         <img src={INSTABGTOP3IMG} alt="MAIN IMG" className="object-contain max-h-full max-w-full z-10 mb-12 pb-12"/>
@@ -700,7 +700,7 @@ const Team = () => {
                         
                             <div className="">
                                 {/*loading screen*/}
-                                    <div className="h-full w-full absolute" style={{display: loadAnimation ? 'block' : 'none'}}>
+                                    <div className="h-full w-full absolute" style={{display: loadAnimation2 ? 'block' : 'none'}}>
                                         <div className='loaderSmall'>
                                             <i className="fa-solid fa-gear"></i>
                                             <p className="text-xs text-gray font-semibold">Loading...</p>
@@ -790,56 +790,56 @@ const Team = () => {
                 <div id="selector_people" className="person-selector items-center inline-block xl:flex lg:overflow-y-scroll xl:overflow-visible min-h-0 md:max-w-[700px] lg:max-h-[600px] 2xl:max-w-[408px] xl:max-w-[353px] p-4">
                     <div className="flex flex-row flex-nowrap md:flex-wrap justify-center lg:flex-nowrap lg:flex-col xl:flex-row xl:flex-wrap gap-4 lg:gap-4 md:max-w-[700px] 2xl:max-w-[376px] xl:max-w-[353px]">
                         <div id="First_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('first')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('first'); setAnimateOut(true)}} className="personblock">
-                            {/*<img src={BILLLIEIMG} alt="BILLLIE IMG"  id="First_image" className={opacity1}/>*/}
+                            
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className="hidden md:inline-block text-2xl font-light"> Saeroyi</p>
+                                <p className="hidden md:inline-block text-2xl font-light"> David</p>
                                 <p className="hidden md:inline-block font-extralight text-xs"> Boss</p>
                             </div>
                         </div>
                         <div id="Second_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('second')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('second'); setAnimateOut(true)}} className="personblock lg:mt-12 xl:mt-0">
-                            {/*<img src={IRENEIMG} alt="IRENE IMG"  id="Second_image" className={opacity2}/>*/}
+                            
                             <div className="absolute flex flex-col justify-center h-full">
                                 <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light"> Yiseo</p>
                                 <p className="hidden md:inline-block font-extralight text-xs"> Manager</p>
                             </div>
                         </div>
                         <div id="Third_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('third')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('third'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            {/*<img src={PIXXIEIMG} alt="PIXXIE IMG"  id="Third_image" className={opacity3}/>*/}
+                            
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">SooAh</p>
-                                <p className="hidden md:inline-block font-extralight text-xs">Visitor</p>
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Charlotte</p>
+                                <p className="hidden md:inline-block font-extralight text-xs">Photographer</p>
                             </div>
                         </div>
                         <div id="Fourth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('fourth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('fourth'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            {/*<img src={PIXXIE2IMG} alt="PIXXIE 2 IMG"  id="Fourth_image" className={opacity4}/>*/}
+                           
                             <div className="absolute flex flex-col justify-center h-full">
-                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Hyeoni</p>
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Melissa</p>
                                 <p className="hidden md:inline-block font-extralight text-xs">Chef</p>
                             </div>
                         </div>
                         <div id="Fifth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('fifth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('fifth'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            {/*<img src={PIXXIE3IMG} alt="PIXXIE 3 IMG"  id="Fifth_image" className={opacity5}/>*/}
-                            <div className="absolute flex flex-col justify-center h-full">
-                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Seunggwon</p>
-                                <p className="hidden md:inline-block font-extralight text-xs">Waiter</p>
-                            </div>
-                        </div>
-                        <div id="Sixth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('sixth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('sixth'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            {/*<img src={SIYEONIMG} alt="SIYEON IMG"  id="Sixth_image" className={opacity6}/>*/}
-                            <div className="absolute flex flex-col justify-center h-full">
-                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Geunsoo</p>
-                                <p className="hidden md:inline-block font-extralight text-xs">Waiter</p>
-                            </div>
-                        </div>
-                        <div id="Seventh_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('seventh')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('seventh'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            {/*<img src={SJUKSEEIMG} alt="SJUKSEE IMG"  id="Seventh_image" className={opacity7}/>*/}
+                            
                             <div className="absolute flex flex-col justify-center h-full">
                                 <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Toni</p>
                                 <p className="hidden md:inline-block font-extralight text-xs">Waiter</p>
                             </div>
                         </div>
+                        <div id="Sixth_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('sixth')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('sixth'); setAnimateOut(true)}} className="personblock lg:mt-12">
+                            
+                            <div className="absolute flex flex-col justify-center h-full">
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Bianca</p>
+                                <p className="hidden md:inline-block font-extralight text-xs">Waitress</p>
+                            </div>
+                        </div>
+                        <div id="Seventh_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('seventh')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('seventh'); setAnimateOut(true)}} className="personblock lg:mt-12">
+                           
+                            <div className="absolute flex flex-col justify-center h-full">
+                                <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Emma</p>
+                                <p className="hidden md:inline-block font-extralight text-xs">Waitress</p>
+                            </div>
+                        </div>
                         <div id="Eight_selector" onMouseOver={() => {setHoverButton(true); setHoverButtonValue('eight')}} onMouseLeave={() => setHoverButton(false)} onClick={() => { setPicCase('eight'); setAnimateOut(true)}} className="personblock lg:mt-12">
-                            {/*<img src={YUKIIMG} alt="YUKI IMG"  id="Eight_image" className={opacity8}/>*/}
+                            
                             <div className="absolute flex flex-col justify-center h-full">
                                 <p className="hidden md:inline-block text-xl 2xl:text-2xl font-light">Mr. Park</p>
                                 <p className="hidden md:inline-block font-extralight text-xs">Boss&#39; boss</p>

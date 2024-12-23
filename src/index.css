@@ -44,7 +44,7 @@
   /*background-image: linear-gradient(to right, #FFB000, #FFEF00);
   background-clip: text;*/
   color: white;
-  @apply absolute top-0 left-0 sm:top-2 sm:left-2 md:top-2 md:left-16 lg:left-4 xl:left-24 2xl:left-48 z-20 drop-shadow-lg p-4
+  @apply absolute top-0 right-20 sm:top-2 sm:left-2 md:top-2 md:left-16 lg:left-4 xl:left-24 2xl:left-48 z-20 drop-shadow-lg p-4
 }
 
 .personblock {
@@ -110,7 +110,7 @@ backdrop-filter: blur(5px);
 .blue_first_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-@apply flex items-center justify-center top-48 -left-4 w-[90px] h-[30px] sm:top-48 sm:left-12 md:top-48 md:left-12 lg:top-48 lg:left-4 2xl:top-48 2xl:left-28 absolute sm:w-[150px] sm:h-[50px] bg-blue-800 rounded-2xl p-2
+@apply flex items-center justify-center top-48 -left-4 w-fit h-[30px] px-5 sm:px-0 sm:top-48 sm:left-12 md:top-48 md:left-12 lg:top-48 lg:left-4 2xl:top-48 2xl:left-28 absolute sm:w-[150px] sm:h-[50px] bg-blue-800 rounded-2xl p-2
 }
 
 .blue_second_message {
@@ -132,7 +132,7 @@ backdrop-filter: blur(5px);
 .red_first_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-  @apply flex items-center justify-center top-48 -right-4 w-[90px] h-[30px] sm:top-64 sm:right-2 md:top-64 md:right-6 lg:top-56 lg:right-2 2xl:top-64 2xl:right-36 absolute sm:w-[150px] sm:h-[50px] bg-red-400 rounded-2xl  p-2
+  @apply flex items-center justify-center top-48 -right-4 w-fit h-[30px] px-5 sm:px-0 sm:top-64 sm:right-2 md:top-64 md:right-6 lg:top-56 lg:right-2 2xl:top-64 2xl:right-36 absolute sm:w-[150px] sm:h-[50px] bg-red-400 rounded-2xl  p-2
 }
 
 .red_second_message {
@@ -154,7 +154,7 @@ backdrop-filter: blur(5px);
 .yellow_first_message {
   filter: drop-shadow(5px 5px 5px #000000c5);
   -webkit-filter: drop-shadow(5px 5px 5px #000000c5);
-  @apply flex items-center justify-center bottom-12 left-12 w-[90px] h-[30px] sm:bottom-20 sm:left-[20rem] md:bottom-28 md:left-[12rem] lg:bottom-28 lg:left-[12rem] 2xl:bottom-24 2xl:left-[18rem] absolute sm:w-[150px] sm:h-[50px] bg-green-600 rounded-2xl p-2
+  @apply flex items-center justify-center bottom-12 left-12 w-fit h-[30px] px-5 sm:px-0 sm:bottom-20 sm:left-[20rem] md:bottom-28 md:left-[12rem] lg:bottom-28 lg:left-[12rem] 2xl:bottom-24 2xl:left-[18rem] absolute sm:w-[150px] sm:h-[50px] bg-green-600 rounded-2xl p-2
 }
 
 .yellow_second_message {
