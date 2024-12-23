@@ -18,7 +18,7 @@ const Team = () => {
     const [loadAnimation2, setloadAnimation2] = useState(false)
     const [oldBgPIC, setOldBgPIC] = useState()
     const [bgPIC, setBgPIC] = useState(INSTABGTOPIMG)
-    const [text, setText] = useState('Saeroyi')
+    const [text, setText] = useState('David')
     const [picCase, setPicCase] = useState('first')
     const [oldPicCase, setOldPicCase] = useState('first')
     const [classnameFunc, setClassnameFunc] = useState("blueClass")
